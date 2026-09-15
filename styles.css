@@ -1,0 +1,290 @@
+/* Libra Shipping B.V. — first version
+   Palette and type taken from the logo file (see brand extract).
+   Deliberately single-theme light: the logo only works on white. */
+
+:root{
+  color-scheme: light;
+  --green:#008453;
+  --green-deep:#006A43;
+  --green-lift:#34C77B;
+  --ink:#1D1D1B;
+  --deep:#0B2018;
+  --paper:#FFFFFF;
+  --mist:#EDF2EF;
+  --grey:#5D6B64;
+  --rule:#D2DCD6;
+  --wrap:1080px;
+  --gut:28px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3,.cond{
+  font-family:"Fira Sans Condensed","Fira Sans",Arial,sans-serif;
+  font-weight:700;
+  text-wrap:balance;
+  margin:0;
+  letter-spacing:.005em;
+}
+h1{font-size:52px;line-height:1.04}
+h2{font-size:32px;line-height:1.12}
+h3{font-size:21px;line-height:1.2}
+p{margin:0;max-width:64ch}
+a{color:var(--green);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--green-deep)}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+img,svg{max-width:100%}
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+.eyebrow{
+  font-family:"Fira Sans Condensed","Fira Sans",Arial,sans-serif;
+  font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--green);margin:0;
+}
+.num{font-variant-numeric:tabular-nums}
+.lead{font-size:20px;line-height:1.55;max-width:58ch;color:var(--ink)}
+.muted{color:var(--grey)}
+
+/* ---------- header ---------- */
+.site-head{border-bottom:1px solid var(--rule);background:var(--paper)}
+.site-head .wrap{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding-block:20px;flex-wrap:wrap;
+}
+.brand{display:block;line-height:0}
+.brand img{width:250px;display:block}
+.nav{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.nav a{
+  font-family:"Fira Sans Condensed","Fira Sans",Arial,sans-serif;font-weight:700;
+  font-size:15px;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--ink);text-decoration:none;
+}
+.nav a:hover,.nav a[aria-current="page"]{color:var(--green)}
+
+/* ---------- sections ---------- */
+section{padding-block:76px}
+section.band{background:var(--mist)}
+.sechead{display:flex;flex-direction:column;gap:10px;margin-bottom:38px;max-width:62ch}
+
+/* ---------- photo placeholders ----------
+   Every .ph is a slot. To drop a real photo in, replace the whole
+   <div class="ph"> with <img src="assets/whatever.jpg" alt="..."> — the
+   surrounding CSS already sizes and crops it. */
+.ph{
+  position:relative;
+  display:flex;flex-direction:column;justify-content:flex-end;gap:5px;
+  padding:20px 22px;
+  background:
+    repeating-linear-gradient(135deg, rgba(52,199,123,.10) 0 1px, transparent 1px 14px),
+    var(--deep);
+  overflow:hidden;
+}
+.ph::before{
+  content:"";position:absolute;inset:14px;
+  border:1px solid rgba(52,199,123,.26);pointer-events:none;
+}
+.ph.top{justify-content:flex-start}
+.ph-tag{
+  font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:12px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--green-lift);position:relative;
+}
+.ph-spec{font-size:13.5px;line-height:1.45;color:#9BB0A4;position:relative;max-width:40ch}
+.ph-init{
+  font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:34px;
+  line-height:1;color:var(--green-lift);position:relative;margin-top:auto;
+}
+.ph.ratio{aspect-ratio:var(--ratio,16 / 9)}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;background:var(--deep);color:var(--paper);
+  min-height:min(74vh,580px);display:flex;align-items:flex-end;padding:0;
+}
+.hero.short{min-height:min(48vh,400px)}
+.hero .media{position:absolute;inset:0;z-index:0}
+.hero .media > .ph{position:absolute;inset:0;align-items:flex-end;text-align:right}
+.hero .media > img{width:100%;height:100%;object-fit:cover;display:block}
+.hero .media::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(11,32,24,.93) 0%,rgba(11,32,24,.70) 42%,rgba(11,32,24,.22) 100%);
+}
+.hero .wrap{
+  position:relative;z-index:1;width:100%;
+  padding-block:56px 48px;display:flex;flex-direction:column;gap:15px;
+}
+.hero h1{color:var(--paper);max-width:15ch}
+.hero .eyebrow{color:var(--green-lift)}
+.hero .lead{color:#E8F0EA;max-width:44ch}
+
+/* slim white contact strip directly beneath the hero */
+.strip{border-bottom:1px solid var(--rule);padding-block:0}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:14px 40px;align-items:baseline;padding-block:22px}
+.strip .item{display:flex;flex-direction:column;gap:1px}
+.strip .lab{
+  font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:12px;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--grey);
+}
+.strip .val{font-size:18px;font-weight:500}
+.strip .val a{text-decoration:none}
+
+
+/* ---------- parcel size range ---------- */
+.scale{border-bottom:1px solid var(--rule);padding-block:0}
+.scale .wrap{
+  display:flex;align-items:baseline;gap:16px 44px;flex-wrap:wrap;
+  padding-block:38px 40px;
+}
+.fig{
+  font-family:"Fira Sans Condensed","Fira Sans",Arial,sans-serif;font-weight:700;
+  font-size:clamp(44px,6vw,70px);line-height:1;color:var(--green);
+  font-variant-numeric:tabular-nums;letter-spacing:-.005em;margin:0;
+}
+.fig .unit{font-size:.42em;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.figcap{font-size:17px;line-height:1.55;max-width:40ch;color:var(--ink);margin:0;flex:1 1 320px}
+
+/* ---------- services ---------- */
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:38px 44px}
+.svc{display:flex;flex-direction:column;gap:9px;border-top:3px solid var(--green);padding-top:16px}
+.svc p{font-size:16.5px;line-height:1.6}
+
+/* ---------- trading area ---------- */
+.areas{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.area{background:var(--paper);padding:20px 22px;display:flex;flex-direction:column;gap:4px}
+.area .n{
+  font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:26px;line-height:1.1;
+}
+.area .d{font-size:14.5px;line-height:1.5;color:var(--grey)}
+.cargo{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.tag{
+  font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;
+  font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;
+  border:1px solid var(--ink);padding:6px 13px;
+}
+
+/* ---------- the offset frame: reserved for people and contact ---------- */
+.framed{
+  background:var(--paper);
+  border:2px solid var(--ink);
+  box-shadow:10px 10px 0 0 var(--green);
+}
+
+.people{display:grid;grid-template-columns:repeat(2,1fr);gap:34px}
+.person .inner{display:flex;align-items:stretch;gap:0}
+.person .portrait{flex:none;width:152px}
+.person .portrait .ph{height:100%;min-height:200px;padding:14px 15px;gap:3px}
+.person .portrait .ph::before{inset:9px}
+.person .portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.person .who{display:flex;flex-direction:column;gap:2px;justify-content:center;padding:22px 22px;min-width:0}
+.person .nm{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:23px;line-height:1.15}
+.person .rl{
+  font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:12px;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--grey);margin-bottom:9px;
+}
+.person .ln{font-size:16px;line-height:1.5;overflow-wrap:anywhere}
+.person .ln a{text-decoration:none}
+
+/* ---------- wide photo band ---------- */
+.band-photo{padding-block:0}
+.band-photo .ph{width:100%}
+.band-photo img{width:100%;display:block}
+.band-photo .ph{aspect-ratio:32 / 9;min-height:220px}
+.band-photo img{aspect-ratio:32 / 9;object-fit:cover}
+
+/* ---------- contact panel ---------- */
+.cpanel .inner{padding:38px 34px;display:flex;flex-direction:column;gap:22px}
+.cpanel h2{max-width:20ch}
+.cdetails{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;border-top:1px solid var(--rule);padding-top:22px}
+.cdetails .lab{
+  font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:12px;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--grey);
+}
+.cdetails .val{font-size:17px;line-height:1.5;overflow-wrap:anywhere}
+.cdetails .val a{text-decoration:none}
+
+.btn{
+  display:inline-block;background:var(--green);color:var(--paper);
+  font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:16px;
+  letter-spacing:.06em;text-transform:uppercase;
+  padding:13px 26px;border:0;cursor:pointer;text-decoration:none;
+}
+.btn:hover{background:var(--green-deep);color:var(--paper)}
+
+/* ---------- form ---------- */
+.form{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 20px;max-width:100%}
+.f{display:flex;flex-direction:column;gap:6px}
+.f.full{grid-column:1 / -1}
+.f label{
+  font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:12px;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--grey);
+}
+.f input,.f textarea,.f select{
+  font-family:inherit;font-size:16px;color:var(--ink);background:var(--paper);
+  border:1px solid var(--rule);border-bottom:2px solid var(--ink);
+  padding:11px 12px;border-radius:0;width:100%;
+}
+.f textarea{min-height:110px;resize:vertical}
+.f input:focus,.f textarea:focus,.f select:focus{border-bottom-color:var(--green)}
+.formnote{font-size:14px;color:var(--grey);line-height:1.55;max-width:56ch}
+
+/* ---------- footer ---------- */
+.site-foot{background:var(--deep);color:#E8F0EA;padding-block:52px 40px}
+.site-foot a{color:var(--green-lift);text-decoration:none}
+.site-foot a:hover{text-decoration:underline}
+.footgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:34px}
+.site-foot .ft{
+  font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:12px;
+  letter-spacing:.13em;text-transform:uppercase;color:#9BB0A4;margin-bottom:9px;
+}
+.site-foot p{font-size:15.5px;line-height:1.6;color:#E8F0EA}
+.footrule{border-top:1px solid #284835;margin-top:38px;padding-top:18px;font-size:13.5px;color:#9BB0A4}
+
+/* ---------- responsive ---------- */
+@media (max-width:880px){
+  h1{font-size:40px}
+  h2{font-size:27px}
+  .areas{grid-template-columns:repeat(2,1fr)}
+  .footgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:880px){
+  .hero{min-height:min(62vh,460px)}
+  .areas{grid-template-columns:repeat(2,1fr)}
+  .band-photo .ph,.band-photo img{aspect-ratio:21 / 9}
+}
+@media (max-width:660px){
+  :root{--gut:20px}
+  body{font-size:16px}
+  h1{font-size:33px}
+  .lead{font-size:18px}
+  section{padding-block:54px}
+  .hero{padding-block:54px 46px}
+  .brand img{width:210px}
+  .services,.people,.form{grid-template-columns:1fr}
+  .areas{grid-template-columns:1fr}
+  .cdetails{grid-template-columns:1fr}
+  .footgrid{grid-template-columns:1fr}
+  .framed{box-shadow:7px 7px 0 0 var(--green)}
+  .hero{min-height:0}
+  .hero .media{position:relative;height:230px}
+  .hero .media > .ph{position:absolute}
+  .hero .wrap{padding-block:34px 38px}
+  .hero{display:block;background:var(--deep)}
+  .hero .media::after{background:linear-gradient(to top,rgba(11,32,24,.55) 0%,rgba(11,32,24,.15) 100%)}
+  .band-photo .ph,.band-photo img{aspect-ratio:3 / 2;min-height:0}
+  .person .inner{flex-direction:column}
+  .person .portrait{width:100%}
+  .person .portrait .ph{min-height:0;aspect-ratio:3 / 2}
+  .strip .wrap{gap:14px 26px}
+  .nav{gap:18px}
+}
