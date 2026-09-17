@@ -80,6 +80,16 @@ FOOTER = '''
       <div>
         <div class="ft">Pages</div>
         <p><a href="chartering.html">Chartering</a><br><a href="agency.html">Agency</a><br><a href="cargo.html">Cargo</a><br><a href="about.html">About</a><br><a href="contact.html">Contact</a></p>
+        <p class="footsocial"><a href="#" class="todo">LinkedIn &rarr; [page URL]</a></p>
+      </div>
+    </div>
+    <div class="footcerts">
+      <span class="ft">Certifications</span>
+      <div class="certrow">
+        <span class="certbox todo">[cert logo]</span>
+        <span class="certbox todo">[cert logo]</span>
+        <span class="certbox todo">[cert logo]</span>
+        <span class="certnote todo">Only the ones Libra holds, each with a number behind it. See <a href="about.html">About</a>.</span>
       </div>
     </div>
     <div class="footrule">
@@ -180,14 +190,28 @@ def to_contact(h2):
 def page_index():
     return (
         hero("hero", "Loaded coaster under way, shot low and wide. Landscape, 2400 &times; 1350 or larger. Room on the left for the headline.",
-             "Ship brokers and agents &middot; Rotterdam &middot; since 1976",
-             "Dry cargo, fixed on coasters.",
-             "Grain, minerals and fertilisers across Europe, the Mediterranean, the Black Sea and West Africa.")
-        + '''  <section class="scale">
+             "Ship brokers and agents &middot; Rotterdam &middot; Antwerp &middot; since 1976",
+             "[What you get when you work with Libra.]",
+             "[One sentence: the promise in plain words. Euro Nordic does &ldquo;We deliver&hellip; quality / personal service&rdquo; as a changing line &mdash; Libra can do a fixed line, or its own changing one.]",
+             cta=("What we do", "#services"))
+        + '''  <section class="kv">
     <div class="wrap">
-      <p class="fig num">500 &ndash; 50,000 <span class="unit">mt</span></p>
-      <p class="figcap">Whatever the parcel size, there is a ship for it &mdash; voyage charter or time charter, bulk, break-bulk or project cargo.</p>
-      ''' + slot("proof", "Optional second and third figure, only if true: <em>since 1976</em> &middot; <em>24/7</em> &middot; <em>two offices</em>.", "inline") + '''
+      <div class="sechead">
+        <h2>[One line on how Libra works, and for how long.]</h2>
+        ''' + slot("text", "One sentence under the heading. The band below is Libra&rsquo;s version of Euro Nordic&rsquo;s key figures: values instead of numbers, plus the one number Libra has.") + '''
+      </div>
+      <div class="kvgrid">
+        <div class="kvt dark"><span class="kvfig num">500 &ndash; 50,000 <small>mt</small></span><span class="kvcap">whatever the parcel size, there is a ship for it</span></div>
+        ''' + photo("tile", "People at the desk, or on the quay. 4 : 3.", "ph tile") + '''
+        <div class="kvt green"><span class="kvhead">Safety first</span><span class="kvcap">[one line]</span></div>
+        <div class="kvt"><span class="kvhead">Pro-active approach</span><span class="kvcap">port turnaround, cost-efficient &mdash; [one line]</span></div>
+        <div class="kvt dark"><span class="kvfig">24/7</span><span class="kvcap">manned office, experienced operators</span></div>
+        ''' + photo("tile", "Vessel alongside. 4 : 3.", "ph tile") + '''
+        <div class="kvt"><span class="kvhead">Dedicated operators</span><span class="kvcap">for each vessel type and cargo &mdash; [one line]</span></div>
+        <div class="kvt green"><span class="kvhead">Tailor-made solutions</span><span class="kvcap">for an efficient port turnaround &mdash; [one line]</span></div>
+        <div class="kvt"><span class="kvhead">Excellent service, competitive rates</span><span class="kvcap">high-quality subcontractors &mdash; [one line]</span></div>
+      </div>
+      ''' + slot("decision", "Six values come from the feedback round; keep the ones Kees confirms, cut the rest. Three to six tiles read well; nine is the ceiling.", "inline") + '''
     </div>
   </section>
 

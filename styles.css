@@ -336,13 +336,40 @@ section.band{background:var(--mist)}
 .footrule{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 24px}
 .footlegal{display:inline-flex;flex-wrap:wrap;gap:6px 18px}
 
+
+/* homepage: key-values band (Libra's version of Euro Nordic's key figures) */
+.kv{background:var(--paper)}
+.kvgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.kvt{
+  min-height:170px;padding:22px 24px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;
+  background:var(--mist);color:var(--ink);
+}
+.kvt.dark{background:var(--deep);color:var(--paper)}
+.kvt.green{background:var(--green);color:var(--paper)}
+.kvfig{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:40px;line-height:1;letter-spacing:-.005em}
+.kvfig small{font-size:.5em;letter-spacing:.1em;text-transform:uppercase}
+.kvhead{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:24px;line-height:1.1}
+.kvcap{font-size:14.5px;line-height:1.45;opacity:.85}
+.ph.tile{min-height:170px;aspect-ratio:auto}
+.kv .slot.inline{margin-top:18px}
+
+/* footer: certifications row, LinkedIn */
+.footcerts{border-top:1px solid #284835;margin-top:34px;padding-top:22px}
+.certrow{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:4px}
+.certbox{
+  display:inline-flex;align-items:center;justify-content:center;width:110px;height:56px;
+  border:1px dashed #9BB0A4;font-size:12.5px;color:#9BB0A4;
+}
+.certnote{font-size:13px;color:#9BB0A4;flex:1 1 260px}
+.footsocial{margin-top:10px}
+
 /* ---------- responsive ---------- */
 @media (max-width:880px){
   h1{font-size:40px}
   h2{font-size:27px}
   .areas{grid-template-columns:repeat(2,1fr)}
   .footgrid,.footgrid.four{grid-template-columns:1fr 1fr}
-  .services.six{grid-template-columns:repeat(2,1fr)}
+  .services.six,.kvgrid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:880px){
   .hero{min-height:min(62vh,460px)}
@@ -359,6 +386,7 @@ section.band{background:var(--mist)}
   .brand img{width:210px}
   .services,.services.six,.people,.form,.values,.offices{grid-template-columns:1fr}
   .cg{grid-template-columns:1fr;gap:6px}
+  .kvgrid{grid-template-columns:1fr}
   .areas{grid-template-columns:1fr}
   .cdetails{grid-template-columns:1fr}
   .footgrid,.footgrid.four{grid-template-columns:1fr}
