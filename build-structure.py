@@ -229,12 +229,10 @@ def page_index():
     </div>
   </section>
 
-  <section id="cargo">
+  <section id="cargo" class="carry">
     <div class="wrap">
-      <div class="sechead">
-        <h2>What we carry.</h2>
-        ''' + slot("text", "One sentence. The cargo families, then a link to the Cargo page.") + '''
-      </div>
+      <p class="eyebrow">What we carry</p>
+      <h2>[One line: the cargo all of this is for.]</h2>
       <div class="cargo">
         <span class="tag">Grain products</span><span class="tag">Minerals</span><span class="tag">Fertilisers</span>
         <span class="tag todo">[steel]</span><span class="tag todo">[&hellip;]</span>

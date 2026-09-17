@@ -337,6 +337,14 @@ section.band{background:var(--mist)}
 .footlegal{display:inline-flex;flex-wrap:wrap;gap:6px 18px}
 
 
+/* homepage: what we carry — centred strip, deliberately unlike "what we do" */
+.carry{padding-block:58px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);text-align:center}
+.carry .wrap{display:flex;flex-direction:column;align-items:center;gap:18px}
+.carry h2{max-width:26ch}
+.carry .cargo{justify-content:center;margin-top:6px;gap:12px}
+.carry .tag{font-size:15px;padding:9px 18px}
+.carry .aftertags{margin-top:2px}
+
 /* homepage: key-values band (Libra's version of Euro Nordic's key figures) */
 .kv{background:var(--paper)}
 .kvgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
