@@ -113,7 +113,7 @@ def person(initials, name, role, tel, mail, note="", mob="[mobile]"):
             </div>
             <div class="who">
               <span class="nm">{name}</span>
-              <span class="rl">{role}</span>
+              {f'<span class="rl">{role}</span>' if role else ''}
               <span class="ln num"><a href="tel:{tel.replace(' ', '')}">{tel}</a></span>
               <span class="ln num todo">mob. {mob}</span>
               <span class="ln"><a href="mailto:{mail}">{mail}</a></span>
@@ -128,8 +128,8 @@ def people(heading, note_rob="", note_joost="", mail="chartering@librashipping.n
     <div class="wrap">
       <div class="sechead"><h2>{heading}</h2></div>
       <div class="people">
-{person("RV", "Rob Vrauwdeunt", "General Manager", "+31 180 441 152", mail, note_rob)}
-{person("JE", "Joost van der Elburg", "General Manager", "+31 180 441 153", mail, note_joost)}
+{person("RV", "Rob Vrauwdeunt", "", "+31 180 441 152", mail, note_rob)}
+{person("JE", "Joost van der Elburg", "", "+31 180 441 153", mail, note_joost)}
       </div>
     </div>
   </section>
@@ -246,7 +246,7 @@ def page_index():
     ''' + photo("full width", "Vessel alongside, or cargo working. Wide crop, 2400 &times; 900 or larger.", "ph") + '''
   </section>
 
-'''     + people("Two people on the other end of the phone.")
+'''     + people("Our team.")
         + to_contact("Tell us the cargo. We will tell you the freight.")
     )
 
@@ -254,9 +254,9 @@ def page_index():
 def service_page(slug):
     if slug == "chartering":
         h1, lead = "Dry cargo, fixed on sea-going vessels.", "[one sentence: what you get when you charter through Libra]"
-        eyebrow = "Chartering &middot; freight calculation &middot; transhipment"
-        cards = [("Voyage charter", ""), ("Time charter", ""), ("Freight calculation", ""), ("Transhipment", "")]
-        grid = "services eight"
+        eyebrow = "Chartering &middot; freight calculation &middot; forwarding"
+        cards = [("Voyage charter", ""), ("Time charter", ""), ("Freight calculation", "")]
+        grid = "services six"
         where_h2, where_body = "Where we trade.", '''      <div class="areas">
         <div class="area"><span class="n">North Sea</span></div><div class="area"><span class="n">Baltic</span></div><div class="area"><span class="n">Atlantic</span></div>
         <div class="area"><span class="n">Mediterranean</span></div><div class="area"><span class="n">Black Sea</span></div><div class="area"><span class="n">West Africa</span></div>
@@ -281,6 +281,18 @@ def service_page(slug):
         ''' + slot("check", "Text as supplied in the feedback round, English polished only. Kees signs off.", "inline")
     else:
         prose = "        " + slot("text", "Paragraph 1 &mdash; what this service is, for whom. 60&ndash;90 words.") + "\n        " + slot("text", "Paragraph 2 &mdash; how Libra works: contact, speed, what makes it reliable. 60&ndash;90 words.")
+    forwarding = '''  <section>
+    <div class="wrap">
+      <div class="sechead"><h2>Forwarding.</h2>''' + slot("text", "One sentence: what Libra arranges around the voyage &mdash; through Euro-Rijn / Euro Nordic or itself. [confirm who does what]") + '''</div>
+      <div class="services six">
+        <div class="svc"><h3>Transhipment</h3>''' + slot("text", "One sentence.") + '''</div>
+        <div class="svc"><h3>On-carriage</h3>''' + slot("text", "One sentence. Onward transport by barge, rail or road.") + '''</div>
+        <div class="svc"><h3>Storage</h3>''' + slot("text", "One sentence.") + '''</div>
+      </div>
+    </div>
+  </section>
+
+''' if slug == "chartering" else ""
     card_html = "\n".join(
         f'''        <div class="svc card">
           {photo("card", "3 : 2", "ph ratio")}
@@ -315,7 +327,7 @@ def service_page(slug):
     </div>
   </section>
 
-  <section>
+{forwarding}  <section>
     <div class="wrap">
       <div class="sechead"><h2>{where_h2}</h2></div>
 {where_body}
@@ -323,7 +335,7 @@ def service_page(slug):
   </section>
 
 '''
-        + people("Who you call.", "[what Rob handles here]", "[what Joost handles here]",
+        + people("Our team.", "[what Rob handles here]", "[what Joost handles here]",
                  mail="libra.agencies@librashipping.nl" if slug == "agency" else "chartering@librashipping.nl")
         + to_contact(cta_h2, "libra.agencies@librashipping.nl" if slug == "agency" else "chartering@librashipping.nl")
     )
@@ -406,7 +418,7 @@ def page_about():
   </section>
 
 '''
-        + people("The team.", "[role, since]", "[role, since]").replace('<section class="band">', '<section>')
+        + people("Our team.", "[role, since]", "[role, since]").replace('<section class="band">', '<section>')
         + f'''  <section class="band">
     <div class="wrap">
       <div class="sechead"><h2>Two offices.</h2></div>
@@ -478,7 +490,7 @@ def page_contact():
   </section>
 
 '''
-        + people("Or go straight to one of us.")
+        + people("Our team.")
     )
 
 
