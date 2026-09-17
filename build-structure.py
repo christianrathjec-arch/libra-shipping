@@ -198,20 +198,13 @@ def page_index():
     <div class="wrap">
       <div class="sechead">
         <h2>[One line on how Libra works, and for how long.]</h2>
-        ''' + slot("text", "One sentence under the heading. The band below is Libra&rsquo;s version of Euro Nordic&rsquo;s key figures: values instead of numbers, plus the one number Libra has.") + '''
+        ''' + slot("text", "One sentence under the heading. Three values, no more &mdash; the band stays quiet.") + '''
       </div>
       <div class="kvgrid">
-        <div class="kvt dark"><span class="kvfig num">500 &ndash; 50,000 <small>mt</small></span><span class="kvcap">whatever the parcel size, there is a ship for it</span></div>
-        ''' + photo("tile", "People at the desk, or on the quay. 4 : 3.", "ph tile") + '''
-        <div class="kvt green"><span class="kvhead">Safety first</span><span class="kvcap">[one line]</span></div>
-        <div class="kvt"><span class="kvhead">Pro-active approach</span><span class="kvcap">port turnaround, cost-efficient &mdash; [one line]</span></div>
-        <div class="kvt dark"><span class="kvfig">24/7</span><span class="kvcap">manned office, experienced operators</span></div>
-        ''' + photo("tile", "Vessel alongside. 4 : 3.", "ph tile") + '''
-        <div class="kvt"><span class="kvhead">Dedicated operators</span><span class="kvcap">for each vessel type and cargo &mdash; [one line]</span></div>
-        <div class="kvt green"><span class="kvhead">Tailor-made solutions</span><span class="kvcap">for an efficient port turnaround &mdash; [one line]</span></div>
-        <div class="kvt"><span class="kvhead">Excellent service, competitive rates</span><span class="kvcap">high-quality subcontractors &mdash; [one line]</span></div>
+        <div class="kvt dark"><span class="kvhead">Excellent services</span><span class="kvcap">with competitive rates and high-quality subcontractors</span></div>
+        <div class="kvt green"><span class="kvfig">24/7</span><span class="kvcap">manned office by experienced operators</span></div>
+        <div class="kvt"><span class="kvhead">Tailor-made solutions</span><span class="kvcap">for an efficient port turnaround</span></div>
       </div>
-      ''' + slot("decision", "Six values come from the feedback round; keep the ones Kees confirms, cut the rest. Three to six tiles read well; nine is the ceiling.", "inline") + '''
     </div>
   </section>
 
@@ -289,6 +282,13 @@ def service_page(slug):
 
     return (
         hero("service hero", photo_spec, eyebrow, h1, lead, short=True, cta=("Get in touch", "contact.html"))
+        + ('''  <section class="scale">
+    <div class="wrap">
+      <p class="fig num">500 &ndash; 50,000 <span class="unit">mt</span></p>
+      <p class="figcap">Whatever the parcel size, there is a ship for it &mdash; voyage charter or time charter, bulk, break-bulk or project cargo.</p>
+    </div>
+  </section>
+''' if slug == "chartering" else "")
         + f'''  <section>
     <div class="wrap">
       <div class="sechead"><h2>[What it is, and how we do it.]</h2></div>
