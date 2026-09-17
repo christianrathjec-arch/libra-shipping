@@ -123,13 +123,13 @@ def person(initials, name, role, tel, mail, note="", mob="[mobile]"):
         </article>'''
 
 
-def people(heading, note_rob="", note_joost="", mail="chartering@librashipping.nl"):
+def people(heading, note_rob="", note_joost="", mail="", sub=""):
     return f'''  <section class="band">
     <div class="wrap">
-      <div class="sechead"><h2>{heading}</h2></div>
+      <div class="sechead"><h2>{heading}</h2>{f'<p class="muted">{sub}</p>' if sub else ''}</div>
       <div class="people">
-{person("RV", "Rob Vrauwdeunt", "", "+31 180 441 152", mail, note_rob)}
-{person("JE", "Joost van der Elburg", "", "+31 180 441 153", mail, note_joost)}
+{person("RV", "Rob Vrauwdeunt", "", "+31 180 441 152", "rv@librashipping.nl", note_rob)}
+{person("JE", "Joost van der Elburg", "", "+31 180 441 153", "je@librashipping.nl", note_joost)}
       </div>
     </div>
   </section>
@@ -448,10 +448,10 @@ def page_contact():
              "For anything with a laycan or an ETA attached, call. It is faster than email.", short=True)
         + f'''  <section class="strip">
     <div class="wrap">
-      <div class="item"><span class="lab">Chartering</span><span class="val"><a href="mailto:chartering@librashipping.nl">chartering@librashipping.nl</a></span></div>
-      <div class="item"><span class="lab">Agency</span><span class="val"><a href="mailto:libra.agencies@librashipping.nl">libra.agencies@librashipping.nl</a></span></div>
+      <div class="item"><span class="lab">General &middot; chartering</span><span class="val"><a href="mailto:chartering@librashipping.nl">chartering@librashipping.nl</a></span></div>
+      <div class="item"><span class="lab">General &middot; agency</span><span class="val"><a href="mailto:libra.agencies@librashipping.nl">libra.agencies@librashipping.nl</a></span></div>
       <div class="item"><span class="lab">Office</span><span class="val num"><a href="tel:+31180441151">+31 180 441 151</a></span></div>
-      <div class="item"><span class="lab">Mobile</span><span class="val num todo">[mobile 1] &middot; [mobile 2] &middot; [mobile 3]</span></div>
+      <div class="item"><span class="lab">Out of hours</span><span class="val num todo">[mobile 1] &middot; [mobile 2] &middot; [mobile 3]</span></div>
     </div>
   </section>
 
@@ -490,7 +490,7 @@ def page_contact():
   </section>
 
 '''
-        + people("Our team.")
+        + people("Or straight to one of us.", sub="Personal lines. Enquiries go to the desk mailboxes above, so they are seen whoever is in.")
     )
 
 
