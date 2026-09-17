@@ -71,11 +71,11 @@ FOOTER = '''
       </div>
       <div>
         <div class="ft">Rotterdam</div>
-        <p>Waalhaven Oostzijde 85<br><span class="num">3087 BM</span> Rotterdam<br><a class="num" href="tel:+31180441151">+31 180 441 151</a><br><a href="mailto:info@librashipping.nl">info@librashipping.nl</a></p>
+        <p>Waalhaven Oostzijde 85<br><span class="num">3087 BM</span> Rotterdam<br><a class="num" href="tel:+31180441151">+31 180 441 151</a><br><a href="mailto:chartering@librashipping.nl">chartering@librashipping.nl</a><br><a href="mailto:libra.agencies@librashipping.nl">libra.agencies@librashipping.nl</a></p>
       </div>
       <div>
         <div class="ft">Antwerp</div>
-        <p class="todo">[address]<br>[telephone]<br>[antwerp@…]</p>
+        <p class="todo">[address]<br>[telephone]<br><a href="mailto:libra.agencies@librashipping.nl">libra.agencies@librashipping.nl</a></p>
       </div>
       <div>
         <div class="ft">Pages</div>
@@ -104,7 +104,7 @@ FOOTER = '''
 '''
 
 
-def person(initials, name, role, tel, mail, note=""):
+def person(initials, name, role, tel, mail, note="", mob="[mobile]"):
     return f'''        <article class="person framed">
           <div class="inner">
             <div class="portrait">
@@ -115,6 +115,7 @@ def person(initials, name, role, tel, mail, note=""):
               <span class="nm">{name}</span>
               <span class="rl">{role}</span>
               <span class="ln num"><a href="tel:{tel.replace(' ', '')}">{tel}</a></span>
+              <span class="ln num todo">mob. {mob}</span>
               <span class="ln"><a href="mailto:{mail}">{mail}</a></span>
               {f'<span class="ln todo">{note}</span>' if note else ''}
             </div>
@@ -122,13 +123,13 @@ def person(initials, name, role, tel, mail, note=""):
         </article>'''
 
 
-def people(heading, note_rob="", note_joost=""):
+def people(heading, note_rob="", note_joost="", mail="chartering@librashipping.nl"):
     return f'''  <section class="band">
     <div class="wrap">
       <div class="sechead"><h2>{heading}</h2></div>
       <div class="people">
-{person("RV", "Rob Vrauwdeunt", "General Manager", "+31 180 441 152", "rv@librashipping.nl", note_rob)}
-{person("JE", "Joost van der Elburg", "General Manager", "+31 180 441 153", "je@librashipping.nl", note_joost)}
+{person("RV", "Rob Vrauwdeunt", "General Manager", "+31 180 441 152", mail, note_rob)}
+{person("JE", "Joost van der Elburg", "General Manager", "+31 180 441 153", mail, note_joost)}
       </div>
     </div>
   </section>
@@ -139,13 +140,13 @@ OFFICES = '''      <div class="offices">
         <article class="office framed">
           <div class="inner">
             <div><span class="on">Rotterdam</span><span class="oc">The Netherlands</span></div>
-            <address>Waalhaven Oostzijde 85<br><span class="num">3087 BM</span> Rotterdam<br><a class="num" href="tel:+31180441151">+31 180 441 151</a><br><a href="mailto:info@librashipping.nl">info@librashipping.nl</a></address>
+            <address>Waalhaven Oostzijde 85<br><span class="num">3087 BM</span> Rotterdam<br><a class="num" href="tel:+31180441151">+31 180 441 151</a><br><a href="mailto:chartering@librashipping.nl">chartering@librashipping.nl</a><br><a href="mailto:libra.agencies@librashipping.nl">libra.agencies@librashipping.nl</a></address>
           </div>
         </article>
         <article class="office framed">
           <div class="inner">
             <div><span class="on">Antwerp</span><span class="oc">Belgium</span></div>
-            <address class="todo">[address]<br>[telephone]<br>[own mailbox, e.g. antwerp@librashipping.nl]</address>
+            <address class="todo">[address]<br>[telephone]<br><a href="mailto:libra.agencies@librashipping.nl">libra.agencies@librashipping.nl</a></address>
           </div>
         </article>
       </div>
@@ -167,7 +168,7 @@ def hero(tag, spec, eyebrow, h1, lead, short=False, cta=None):
 '''
 
 
-def to_contact(h2):
+def to_contact(h2, mail="chartering@librashipping.nl"):
     return f'''  <section>
     <div class="wrap">
       <div class="cpanel framed">
@@ -177,7 +178,7 @@ def to_contact(h2):
           <div class="cdetails">
             <div><div class="lab">Rotterdam</div><div class="val num"><a href="tel:+31180441151">+31 180 441 151</a></div></div>
             <div><div class="lab">Antwerp</div><div class="val todo">[telephone]</div></div>
-            <div><div class="lab">Email</div><div class="val"><a href="mailto:info@librashipping.nl">info@librashipping.nl</a></div></div>
+            <div><div class="lab">Email</div><div class="val"><a href="mailto:{mail}">{mail}</a></div></div>
           </div>
         </div>
       </div>
@@ -252,7 +253,7 @@ def page_index():
 
 def service_page(slug):
     if slug == "chartering":
-        h1, lead = "Dry cargo, fixed on coasters.", "[one sentence: what you get when you charter through Libra]"
+        h1, lead = "Dry cargo, fixed on sea-going vessels.", "[one sentence: what you get when you charter through Libra]"
         eyebrow = "Chartering &middot; freight calculation &middot; transhipment"
         cards = [("Voyage charter", ""), ("Time charter", ""), ("Freight calculation", ""), ("Transhipment", "")]
         grid = "services eight"
@@ -322,8 +323,9 @@ def service_page(slug):
   </section>
 
 '''
-        + people("Who you call.", "[what Rob handles here]", "[what Joost handles here]")
-        + to_contact(cta_h2)
+        + people("Who you call.", "[what Rob handles here]", "[what Joost handles here]",
+                 mail="libra.agencies@librashipping.nl" if slug == "agency" else "chartering@librashipping.nl")
+        + to_contact(cta_h2, "libra.agencies@librashipping.nl" if slug == "agency" else "chartering@librashipping.nl")
     )
 
 
@@ -432,7 +434,16 @@ def page_contact():
              "Contact",
              "Two desks. Either one picks up.",
              "For anything with a laycan or an ETA attached, call. It is faster than email.", short=True)
-        + f'''  <section class="band">
+        + f'''  <section class="strip">
+    <div class="wrap">
+      <div class="item"><span class="lab">Chartering</span><span class="val"><a href="mailto:chartering@librashipping.nl">chartering@librashipping.nl</a></span></div>
+      <div class="item"><span class="lab">Agency</span><span class="val"><a href="mailto:libra.agencies@librashipping.nl">libra.agencies@librashipping.nl</a></span></div>
+      <div class="item"><span class="lab">Office</span><span class="val num"><a href="tel:+31180441151">+31 180 441 151</a></span></div>
+      <div class="item"><span class="lab">Mobile</span><span class="val num todo">[mobile 1] &middot; [mobile 2] &middot; [mobile 3]</span></div>
+    </div>
+  </section>
+
+  <section class="band">
     <div class="wrap">
       <div class="sechead"><h2>Rotterdam and Antwerp.</h2></div>
 {OFFICES}

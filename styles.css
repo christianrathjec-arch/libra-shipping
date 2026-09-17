@@ -274,6 +274,7 @@ section.band{background:var(--mist)}
 /* header: contact as a button, language switch */
 .btn.small{padding:9px 18px;font-size:14px}
 .nav .btn{color:var(--paper)}
+.nav .btn[aria-current="page"]{color:var(--paper);background:var(--green-deep)}
 .lang{display:inline-flex;gap:0;border:1px solid var(--rule);margin-left:6px}
 .lang a{
   font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:12.5px;
