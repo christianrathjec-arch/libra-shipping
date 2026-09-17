@@ -253,8 +253,9 @@ def page_index():
 def service_page(slug):
     if slug == "chartering":
         h1, lead = "Dry cargo, fixed on coasters.", "[one sentence: what you get when you charter through Libra]"
-        eyebrow = "Chartering &middot; broking &middot; freight calculation"
-        cards = [("Voyage charter", ""), ("Time charter", ""), ("Broking &amp; freight coverage", ""), ("Freight calculation", ""), ("[card 5]", ""), ("[card 6]", "")]
+        eyebrow = "Chartering &middot; freight calculation &middot; transhipment"
+        cards = [("Voyage charter", ""), ("Time charter", ""), ("Freight calculation", ""), ("Transhipment", "")]
+        grid = "services eight"
         where_h2, where_body = "Where we trade.", '''      <div class="areas">
         <div class="area"><span class="n">North Sea</span></div><div class="area"><span class="n">Baltic</span></div><div class="area"><span class="n">Atlantic</span></div>
         <div class="area"><span class="n">Mediterranean</span></div><div class="area"><span class="n">Black Sea</span></div><div class="area"><span class="n">West Africa</span></div>
@@ -263,14 +264,22 @@ def service_page(slug):
         cta_h2 = "Give us the voyage. We will come back with a number."
         photo_spec = "Coaster loading or at sea. Landscape, 2400 &times; 1350 or larger."
     else:
-        h1, lead = "[one promise, in port language]", "[one sentence: what the agency does and where]"
-        eyebrow = "Ship&rsquo;s agency &middot; [ports] &middot; [offices]"
-        cards = [("[service 1]", ""), ("[service 2]", ""), ("[service 3]", ""), ("[service 4]", ""), ("[service 5]", ""), ("[service 6]", "")]
+        h1, lead = "[one promise, in port language]", "Libra Shipping offers chartering worldwide and has its own agencies in the Netherlands and Belgium."
+        eyebrow = "Ship&rsquo;s agency &middot; the Netherlands and Belgium"
+        cards = [("Husbandry agency", ""), ("Bunkering services", ""), ("Crewing services", ""), ("Lay-by services", ""),
+                 ("Repair services", ""), ("Barge hire", ""), ("Brokering", ""), ("Terminal arrangements", "")]
+        grid = "services eight"
         where_h2, where_body = "Where we work.", '''      <div class="sechead">''' + slot("text", "One sentence: the port range covered, from which offices.") + '''</div>
 ''' + OFFICES.replace('<address class="todo">', '<address class="todo">').replace('<address>Waalhaven', '<div class="ports todo">[ports served from here]</div><address>Waalhaven').replace('<address class="todo">[address]', '<div class="ports todo">[ports served from here]</div><address class="todo">[address]')
         cta_h2 = "Nominate a vessel, or ask what a call will cost."
         photo_spec = "Vessel alongside, agent on the quay. Landscape, 2400 &times; 1350 or larger."
 
+    if slug == "agency":
+        prose = '''        <p>We focus on a safe, smooth and efficient port turnaround. Our employees have specialised knowledge of all types of vessels and cargoes, and with a long track record they are a reliable source of information.</p>
+        <p>At Libra Shipping we believe in a pro-active approach by dedicated staff, which should result in the optimisation of port rotations and a long-term reduction in the overall time spent in port. All of this is always aligned with the customer&rsquo;s requirements, without compromising on safety requirements or local laws.</p>
+        ''' + slot("check", "Text as supplied in the feedback round, English polished only. Kees signs off.", "inline")
+    else:
+        prose = "        " + slot("text", "Paragraph 1 &mdash; what this service is, for whom. 60&ndash;90 words.") + "\n        " + slot("text", "Paragraph 2 &mdash; how Libra works: contact, speed, what makes it reliable. 60&ndash;90 words.")
     card_html = "\n".join(
         f'''        <div class="svc card">
           {photo("card", "3 : 2", "ph ratio")}
@@ -291,16 +300,15 @@ def service_page(slug):
     <div class="wrap">
       <div class="sechead"><h2>[What it is, and how we do it.]</h2></div>
       <div class="prose">
-        {slot("text", "Paragraph 1 &mdash; what this service is, for whom. 60&ndash;90 words.")}
-        {slot("text", "Paragraph 2 &mdash; how Libra works: contact, speed, what makes it reliable. 60&ndash;90 words.")}
+{prose}
       </div>
     </div>
   </section>
 
   <section class="band">
     <div class="wrap">
-      <div class="sechead"><h2>[What falls under it.]</h2>{slot("cards", "Three to six cards. Each: a photo, a name, one sentence. Cut the empty ones.")}</div>
-      <div class="services six">
+      <div class="sechead"><h2>{"Amongst other things, we can offer you:" if slug == "agency" else "[What falls under it.]"}</h2>{slot("cards", "Each card: a photo, a name, one sentence.")}</div>
+      <div class="{grid}">
 {card_html}
       </div>
     </div>
