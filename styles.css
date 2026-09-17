@@ -1,4 +1,4 @@
-/* Libra Shipping B.V. — first version
+/* Libra Shipping B.V. — structure build (Sept 2026)
    Palette and type taken from the logo file (see brand extract).
    Deliberately single-theme light: the logo only works on white. */
 
@@ -250,12 +250,99 @@ section.band{background:var(--mist)}
 .site-foot p{font-size:15.5px;line-height:1.6;color:#E8F0EA}
 .footrule{border-top:1px solid #284835;margin-top:38px;padding-top:18px;font-size:13.5px;color:#9BB0A4}
 
+
+/* ---------- structure build ---------- */
+/* content slots: every block of text not yet written is a slot. Dashed, tinted,
+   labelled. Replace the whole <div class="slot"> with the real element. */
+.slot{
+  display:flex;flex-direction:column;gap:3px;
+  border:1.5px dashed var(--green);background:rgba(0,132,83,.06);
+  padding:10px 13px;font-size:14.5px;line-height:1.5;color:var(--grey);max-width:64ch;
+}
+.slot-tag{
+  font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:11px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--green);
+}
+.slot-txt{font-style:italic}
+.slot.inline{display:inline-flex;max-width:none;margin-top:6px}
+.sechead .slot{margin-top:4px}
+.todo{color:var(--grey);font-style:italic}
+.tag.todo{border-style:dashed;border-color:var(--grey)}
+.hero h1{max-width:18ch}
+.hero .lead.todo{color:#9BB0A4}
+
+/* header: contact as a button, language switch */
+.btn.small{padding:9px 18px;font-size:14px}
+.nav .btn{color:var(--paper)}
+.lang{display:inline-flex;gap:0;border:1px solid var(--rule);margin-left:6px}
+.lang a{
+  font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:12.5px;
+  letter-spacing:.08em;padding:5px 9px;color:var(--grey);text-decoration:none;
+}
+.lang a[aria-current="true"]{background:var(--ink);color:var(--paper)}
+
+/* homepage: services as signposts */
+.services.link .svc{color:inherit;text-decoration:none}
+.services.link .svc:hover h3{color:var(--green)}
+.services .more{
+  font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:14px;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--green);margin-top:4px;
+}
+.aftertags{margin-top:16px}
+.aftertags a{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:14px;text-decoration:none}
+
+/* service page: six cards with a photo on top */
+.services.six{grid-template-columns:repeat(3,1fr);gap:34px 36px}
+.svc.card .ph{aspect-ratio:3 / 2;margin-bottom:6px}
+.prose{display:flex;flex-direction:column;gap:14px;max-width:64ch}
+.person .portrait .ph-init{position:absolute;left:15px;bottom:14px}
+.person .portrait{position:relative}
+
+/* cargo groups */
+.cargogroups{display:flex;flex-direction:column;gap:28px}
+.cg{display:grid;grid-template-columns:170px 1fr;gap:14px;align-items:start}
+.cg-lab{
+  font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:22px;line-height:1.1;padding-top:4px;
+}
+.cg-body{display:flex;flex-direction:column;gap:12px}
+.cg .cargo{margin-top:0}
+.cert{
+  margin-top:36px;border-left:4px solid var(--green);background:var(--mist);
+  padding:16px 20px;display:flex;gap:20px;align-items:center;
+}
+.cert-mark{
+  font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:24px;
+  line-height:1;color:var(--green);flex:none;
+}
+.cert p{max-width:none}
+
+/* about: values */
+.values{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 44px;list-style:none;padding:0;margin:0}
+.values li{border-top:3px solid var(--green);padding-top:14px;font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:21px;line-height:1.25}
+.values li span{display:block;font-family:"Fira Sans",Arial,sans-serif;font-weight:400;font-size:16px;color:var(--grey);margin-top:5px}
+
+/* offices: framed, like people */
+.offices{display:grid;grid-template-columns:repeat(2,1fr);gap:34px}
+.office .inner{padding:26px 26px 28px;display:flex;flex-direction:column;gap:14px}
+.office .on{display:block;font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:23px;line-height:1.15}
+.office .oc{display:block;font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--grey);margin-top:3px}
+.office .ports{font-size:14.5px}
+.office address{font-style:normal;font-size:16px;line-height:1.55;border-top:1px solid var(--rule);padding-top:14px}
+.office address.todo{font-style:italic}
+.office address a{text-decoration:none}
+
+/* footer: four columns, legal row */
+.footgrid.four{grid-template-columns:2fr 1fr 1fr 1fr}
+.footrule{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 24px}
+.footlegal{display:inline-flex;flex-wrap:wrap;gap:6px 18px}
+
 /* ---------- responsive ---------- */
 @media (max-width:880px){
   h1{font-size:40px}
   h2{font-size:27px}
   .areas{grid-template-columns:repeat(2,1fr)}
-  .footgrid{grid-template-columns:1fr 1fr}
+  .footgrid,.footgrid.four{grid-template-columns:1fr 1fr}
+  .services.six{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:880px){
   .hero{min-height:min(62vh,460px)}
@@ -270,10 +357,11 @@ section.band{background:var(--mist)}
   section{padding-block:54px}
   .hero{padding-block:54px 46px}
   .brand img{width:210px}
-  .services,.people,.form{grid-template-columns:1fr}
+  .services,.services.six,.people,.form,.values,.offices{grid-template-columns:1fr}
+  .cg{grid-template-columns:1fr;gap:6px}
   .areas{grid-template-columns:1fr}
   .cdetails{grid-template-columns:1fr}
-  .footgrid{grid-template-columns:1fr}
+  .footgrid,.footgrid.four{grid-template-columns:1fr}
   .framed{box-shadow:7px 7px 0 0 var(--green)}
   .hero{min-height:0}
   .hero .media{position:relative;height:230px}
