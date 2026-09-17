@@ -271,6 +271,13 @@ section.band{background:var(--mist)}
 .hero h1{max-width:18ch}
 .hero .lead.todo{color:#9BB0A4}
 
+/* three on the team */
+.people.three{grid-template-columns:repeat(3,1fr);gap:24px}
+.people.three .person .portrait{width:118px}
+.people.three .person .who{padding:18px 16px}
+.people.three .person .nm{font-size:20px}
+.people.three .person .ln{font-size:14.5px}
+
 /* header: contact as a button, language switch */
 .btn.small{padding:9px 18px;font-size:14px}
 .nav .btn{color:var(--paper)}
@@ -382,6 +389,7 @@ section.band{background:var(--mist)}
   .areas{grid-template-columns:repeat(2,1fr)}
   .footgrid,.footgrid.four{grid-template-columns:1fr 1fr}
   .services.six,.services.eight,.kvgrid{grid-template-columns:repeat(2,1fr)}
+  .people.three{grid-template-columns:1fr 1fr}
 }
 @media (max-width:880px){
   .hero{min-height:min(62vh,460px)}
@@ -396,7 +404,7 @@ section.band{background:var(--mist)}
   section{padding-block:54px}
   .hero{padding-block:54px 46px}
   .brand img{width:210px}
-  .services,.services.six,.services.eight,.people,.form,.values,.offices{grid-template-columns:1fr}
+  .services,.services.six,.services.eight,.people,.people.three,.form,.values,.offices{grid-template-columns:1fr}
   .cg{grid-template-columns:1fr;gap:6px}
   .kvgrid{grid-template-columns:1fr}
   .areas{grid-template-columns:1fr}

@@ -114,22 +114,23 @@ def person(initials, name, role, tel, mail, note="", mob="[mobile]"):
             <div class="who">
               <span class="nm">{name}</span>
               {f'<span class="rl">{role}</span>' if role else ''}
-              <span class="ln num"><a href="tel:{tel.replace(' ', '')}">{tel}</a></span>
+              {f'<span class="ln num"><a href="tel:{tel.replace(" ", "")}">{tel}</a></span>' if tel[0] == "+" else f'<span class="ln num todo">{tel}</span>'}
               <span class="ln num todo">mob. {mob}</span>
-              <span class="ln"><a href="mailto:{mail}">{mail}</a></span>
+              {f'<span class="ln"><a href="mailto:{mail}">{mail}</a></span>' if "@" in mail and mail[0] != "[" else f'<span class="ln todo">{mail}</span>'}
               {f'<span class="ln todo">{note}</span>' if note else ''}
             </div>
           </div>
         </article>'''
 
 
-def people(heading, note_rob="", note_joost="", mail="", sub=""):
+def people(heading, note_rob="", note_joost="", mail="", sub="", note_sefa=""):
     return f'''  <section class="band">
     <div class="wrap">
       <div class="sechead"><h2>{heading}</h2>{f'<p class="muted">{sub}</p>' if sub else ''}</div>
-      <div class="people">
+      <div class="people three">
 {person("RV", "Rob Vrauwdeunt", "", "+31 180 441 152", "rv@librashipping.nl", note_rob)}
 {person("JE", "Joost van der Elburg", "", "+31 180 441 153", "je@librashipping.nl", note_joost)}
+{person("S", "Sefa [surname]", "", "[office line]", "[s…@librashipping.nl]", note_sefa)}
       </div>
     </div>
   </section>
@@ -335,7 +336,7 @@ def service_page(slug):
   </section>
 
 '''
-        + people("Our team.", "[what Rob handles here]", "[what Joost handles here]",
+        + people("Our team.", "[what Rob handles here]", "[what Joost handles here]", note_sefa="[what Sefa handles here]",
                  mail="libra.agencies@librashipping.nl" if slug == "agency" else "chartering@librashipping.nl")
         + to_contact(cta_h2, "libra.agencies@librashipping.nl" if slug == "agency" else "chartering@librashipping.nl")
     )
@@ -418,7 +419,7 @@ def page_about():
   </section>
 
 '''
-        + people("Our team.", "[role, since]", "[role, since]").replace('<section class="band">', '<section>')
+        + people("Our team.", "[role, since]", "[role, since]", note_sefa="[role, since]").replace('<section class="band">', '<section>')
         + f'''  <section class="band">
     <div class="wrap">
       <div class="sechead"><h2>Two offices.</h2></div>
