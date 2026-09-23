@@ -349,7 +349,7 @@ section.band{background:var(--mist)}
 
 
 /* homepage: what we carry — centred strip, deliberately unlike "what we do" */
-.carry{padding-block:58px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);text-align:center}
+.carry{padding-block:76px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);text-align:center}
 .carry .wrap{display:flex;flex-direction:column;align-items:center;gap:18px}
 .carry h2{max-width:26ch}
 .carry .cargo{justify-content:center;margin-top:6px;gap:12px}
@@ -552,7 +552,7 @@ section.band{background:var(--mist)}
 .sn{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:.16em;color:var(--green);font-variant-numeric:tabular-nums}
 .st{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:20px;line-height:1.2}
 .sd{font-size:14.5px;line-height:1.5;color:var(--grey)}
-.stepnote{margin-top:30px;font-size:16px}
+.stepnote{margin-top:34px;font-size:16px}
 .stepnote a{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:14px;text-decoration:none;margin-left:6px}
 
 /* contact: optional voyage details fold */
@@ -572,10 +572,9 @@ section.band{background:var(--mist)}
 /* ---------- agency: port-call steps, one team, 24/7 ---------- */
 .steps.six{grid-template-columns:repeat(6,1fr);gap:24px 18px}
 .steps.six .st{font-size:18px}
-.stepnote .btn{margin-top:4px}
+.stepnote .btn{margin-top:0}
 .oneteam{max-width:64ch}
-.oneteam .sechead{margin-bottom:14px}
-.cdetails.four{grid-template-columns:repeat(4,1fr)}
+.cdetails.four{grid-template-columns:1fr 1fr 1fr 1.6fr}
 .tick{grid-column:1 / -1;display:flex;align-items:center;gap:10px;font-size:15.5px}
 .tick input{width:18px;height:18px;accent-color:var(--green);margin:0}
 @media (max-width:880px){.steps.six{grid-template-columns:repeat(3,1fr)}.cdetails.four{grid-template-columns:1fr 1fr}}
@@ -588,7 +587,7 @@ section.band{background:var(--mist)}
 .figblock .dash{margin:0 .06em;color:var(--ink)}
 .figunit{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
 .figblock .figcap{font-size:15.5px;color:var(--grey);flex:none;margin-top:6px}
-.trademap{margin:0 0 10px;line-height:0}
+.trademap{margin:0 0 34px;line-height:0}
 .trademap svg{width:100%;height:auto;display:block;font-family:"Fira Sans Condensed","Fira Sans",Arial,sans-serif}
 .trademap .land{fill:var(--paper);stroke:var(--rule);stroke-width:1.5;stroke-linejoin:round}
 .trademap .sea2{fill:var(--mist);stroke:var(--rule);stroke-width:1.2;stroke-linejoin:round}
