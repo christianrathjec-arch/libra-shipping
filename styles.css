@@ -488,3 +488,50 @@ section.band{background:var(--mist)}
   .portmap .legend{display:none}
   .certdetail summary{flex-wrap:wrap;gap:12px}
 }
+
+/* ---------- V4b: About timeline, six values, home team CTA ---------- */
+.timeline{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(6,1fr);gap:18px;position:relative;
+}
+.timeline::before{
+  content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:var(--rule);
+}
+.timeline li{position:relative;padding-top:30px;display:flex;flex-direction:column;gap:3px;min-width:0}
+.timeline li::before{
+  content:"";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;
+  background:var(--paper);border:3px solid var(--green);box-sizing:border-box;
+}
+.timeline li:last-child::before{background:var(--green)}
+.timeline .yr{
+  font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:24px;line-height:1;
+  color:var(--green);font-variant-numeric:tabular-nums;
+}
+.timeline .ev{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:17px;line-height:1.2;margin-top:4px}
+.timeline .ds{font-size:14px;line-height:1.45;color:var(--grey)}
+.timeline + .slot.inline{margin-top:28px}
+
+.values.six{grid-template-columns:repeat(3,1fr);gap:26px 36px}
+.values.six li{position:relative;padding-top:16px;font-size:20px}
+.values .vn{
+  display:block;font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:13px;
+  letter-spacing:.16em;color:var(--green);margin-bottom:6px;font-variant-numeric:tabular-nums;
+}
+.values.six li span:not(.vn){font-size:15.5px}
+
+.aftercta{margin-top:34px}
+
+@media (max-width:880px){
+  .timeline{grid-template-columns:repeat(3,1fr);gap:34px 18px}
+  .timeline::before{display:none}
+  .timeline li{padding-top:0;padding-left:30px}
+  .timeline li::before{top:2px}
+  .values.six{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:660px){
+  .timeline{grid-template-columns:1fr;gap:22px;padding-left:9px}
+  .timeline::before{display:block;left:9px;right:auto;top:0;bottom:0;width:2px;height:auto}
+  .timeline li{padding-left:34px}
+  .timeline li::before{left:0}
+  .values.six{grid-template-columns:1fr}
+}
