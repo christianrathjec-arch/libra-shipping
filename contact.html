@@ -70,7 +70,7 @@
     <div class="wrap">
       <div class="sechead">
         <h2>Give us the voyage. We will come back with a number.</h2>
-        <p class="muted">Name, email and cargo are all we need. The rest just helps us answer faster.</p>
+        <p class="muted">Name, email and a few words about your cargo or vessel are all we need. Voyage details help us answer faster, but they can wait for the phone call.</p>
         <div class="slot "><span class="slot-tag">decision</span><span class="slot-txt">One form for both? Or a switch at the top: <em>freight enquiry</em> / <em>port call</em>. The port-call version asks for vessel, ETA, port, cargo, agent needs.</span></div>
       </div>
       <form class="form" id="enquiry" novalidate>
@@ -78,13 +78,18 @@
         <div class="f"><label for="company">Company</label><input id="company" name="company" type="text" autocomplete="organization"></div>
         <div class="f"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
         <div class="f"><label for="phone">Telephone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
-        <div class="f"><label for="cargo">Cargo</label><input id="cargo" name="cargo" type="text" placeholder="Wheat, urea, steel coils&hellip;" required></div>
-        <div class="f"><label for="quantity">Quantity</label><input id="quantity" name="quantity" type="text" placeholder="3,000 mt 10% moloo (500&ndash;50,000)"></div>
-        <div class="f"><label for="loadport">Load port</label><input id="loadport" name="loadport" type="text"></div>
-        <div class="f"><label for="dischport">Discharge port</label><input id="dischport" name="dischport" type="text"></div>
-        <div class="f"><label for="laycan">Laycan</label><input id="laycan" name="laycan" type="text" placeholder="12&ndash;18 October"></div>
-        <div class="f"><label for="terms">Load / discharge terms</label><input id="terms" name="terms" type="text" placeholder="1,000 mt sshex eiu"></div>
-        <div class="f full"><label for="message">Anything else</label><textarea id="message" name="message"></textarea></div>
+        <div class="f full"><label for="message">Tell us about your cargo or vessel</label><textarea id="message" name="message" placeholder="What needs to move, roughly how much, and when &mdash; or the vessel you have open." required></textarea></div>
+        <details class="f full more">
+          <summary>Add voyage details <span class="muted">(optional)</span></summary>
+          <div class="form inner">
+            <div class="f"><label for="cargo">Cargo</label><input id="cargo" name="cargo" type="text" placeholder="Wheat, urea, steel coils&hellip;"></div>
+            <div class="f"><label for="quantity">Quantity</label><input id="quantity" name="quantity" type="text" placeholder="3,000 mt 10% moloo (500&ndash;50,000)"></div>
+            <div class="f"><label for="loadport">Load port</label><input id="loadport" name="loadport" type="text"></div>
+            <div class="f"><label for="dischport">Discharge port</label><input id="dischport" name="dischport" type="text"></div>
+            <div class="f"><label for="laycan">Laycan</label><input id="laycan" name="laycan" type="text" placeholder="12&ndash;18 October"></div>
+            <div class="f"><label for="terms">Load / discharge terms</label><input id="terms" name="terms" type="text" placeholder="1,000 mt sshex eiu"></div>
+          </div>
+        </details>
         <div class="f full">
           <p><button class="btn" type="submit">Send enquiry</button></p>
           <p class="formnote"><div class="slot inline"><span class="slot-tag">decision</span><span class="slot-txt">No server yet (mailto in V1). Decide: Formspree, a small function, or what the host offers. Plus a tick-box for the conditions, as Euro Nordic has.</span></div></p>
