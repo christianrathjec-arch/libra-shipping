@@ -71,7 +71,6 @@
       <div class="sechead">
         <h2>Give us the voyage. We will come back with a number.</h2>
         <p class="muted">Name, email and a few words about your cargo or vessel are all we need. Voyage details help us answer faster, but they can wait for the phone call.</p>
-        <div class="slot "><span class="slot-tag">decision</span><span class="slot-txt">One form for both? Or a switch at the top: <em>freight enquiry</em> / <em>port call</em>. The port-call version asks for vessel, ETA, port, cargo, agent needs.</span></div>
       </div>
       <form class="form" id="enquiry" novalidate>
         <div class="f"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
@@ -88,6 +87,16 @@
             <div class="f"><label for="dischport">Discharge port</label><input id="dischport" name="dischport" type="text"></div>
             <div class="f"><label for="laycan">Laycan</label><input id="laycan" name="laycan" type="text" placeholder="12&ndash;18 October"></div>
             <div class="f"><label for="terms">Load / discharge terms</label><input id="terms" name="terms" type="text" placeholder="1,000 mt sshex eiu"></div>
+          </div>
+        </details>
+        <details class="f full more">
+          <summary>Add port call details <span class="muted">(optional)</span></summary>
+          <div class="form inner">
+            <div class="f"><label for="vessel">Vessel name</label><input id="vessel" name="vessel" type="text"></div>
+            <div class="f"><label for="eta">ETA</label><input id="eta" name="eta" type="text" placeholder="14 October, am"></div>
+            <div class="f"><label for="port">Port</label><input id="port" name="port" type="text" placeholder="Rotterdam, Antwerp, Ghent&hellip;"></div>
+            <div class="f"><label for="agentneeds">What is needed</label><input id="agentneeds" name="agentneeds" type="text" placeholder="Full agency, husbandry only, crew change&hellip;"></div>
+            <label class="tick full"><input type="checkbox" name="proforma" value="yes"> Please send a proforma disbursement account</label>
           </div>
         </details>
         <div class="f full">

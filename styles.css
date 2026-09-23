@@ -569,3 +569,15 @@ section.band{background:var(--mist)}
 
 @media (max-width:880px){.steps{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:660px){.steps,.services.audiences{grid-template-columns:1fr}}
+
+/* ---------- agency: port-call steps, one team, 24/7 ---------- */
+.steps.six{grid-template-columns:repeat(6,1fr);gap:24px 18px}
+.steps.six .st{font-size:18px}
+.stepnote .btn{margin-top:4px}
+.oneteam{max-width:64ch}
+.oneteam .sechead{margin-bottom:14px}
+.cdetails.four{grid-template-columns:repeat(4,1fr)}
+.tick{grid-column:1 / -1;display:flex;align-items:center;gap:10px;font-size:15.5px}
+.tick input{width:18px;height:18px;accent-color:var(--green);margin:0}
+@media (max-width:880px){.steps.six{grid-template-columns:repeat(3,1fr)}.cdetails.four{grid-template-columns:1fr 1fr}}
+@media (max-width:660px){.steps.six{grid-template-columns:1fr}.cdetails.four{grid-template-columns:1fr}}
