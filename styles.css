@@ -661,3 +661,6 @@ section.band{background:var(--mist)}
   .chain li{flex-direction:row;text-align:left}
   .fwdpanel{padding:28px 22px}
 }
+
+/* every page: title, then a paragraph or two, then the specifics */
+.prose.intro{margin-bottom:44px}
