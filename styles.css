@@ -464,13 +464,12 @@ section.band{background:var(--mist)}
 .certcta .btn{white-space:nowrap}
 
 /* agency: the ARA port map */
-.portmap{border:1px solid var(--rule);margin-bottom:38px;line-height:0}
+.portmap{margin:0 0 34px;line-height:0}
 .portmap svg{width:100%;height:auto;display:block;font-family:"Fira Sans Condensed","Fira Sans",Arial,sans-serif}
-.portmap .sea{fill:var(--mist)}
 .portmap .land{fill:var(--paper);stroke:var(--rule);stroke-width:1.5;stroke-linejoin:round}
-.portmap .river{fill:none;stroke:var(--mist);stroke-width:3;stroke-linecap:round}
+.portmap .river{fill:none;stroke:var(--mist);stroke-width:4;stroke-linecap:round}
 .portmap .sealab{font-size:13px;letter-spacing:.16em;text-transform:uppercase;fill:var(--grey);font-weight:700}
-.portmap .port text{font-size:14px;font-weight:700;fill:var(--ink)}
+.portmap .port text{font-size:16px;font-weight:700;fill:var(--ink)}
 .portmap .port circle{stroke:var(--paper);stroke-width:2}
 .portmap .port .ring{fill:none;stroke-width:1.5;opacity:0;transition:opacity .15s}
 .portmap .port.rtm circle{fill:var(--green)}
