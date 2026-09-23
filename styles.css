@@ -678,3 +678,33 @@ section.band{background:var(--mist)}
 .cg-body p{font-size:16px;line-height:1.6;max-width:60ch}
 .cg-body p a{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:13.5px;text-decoration:none;margin-left:4px}
 @media (max-width:660px){.scale-vis .t{font-size:30px}.scale-vis .n{font-size:18px}}
+
+/* ---------- about: parents, values in pairs ---------- */
+.parents{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.parent{display:flex;flex-direction:column;gap:10px;border-top:3px solid var(--green);padding-top:18px}
+.plogo{width:150px;height:60px;border-color:var(--rule);color:var(--grey);font-style:italic;font-size:12.5px}
+.parent .pn{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:21px;line-height:1.2}
+.parent p{font-size:16px;color:var(--grey)}
+.values.pairs{grid-template-columns:repeat(3,1fr);gap:26px 36px}
+.values.pairs li{display:flex;flex-direction:column;gap:10px;font-size:16px;font-family:"Fira Sans",Arial,sans-serif;font-weight:400}
+.values.pairs .vh{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:22px;line-height:1.2;margin-bottom:4px}
+.values.pairs .vp{display:block;font-size:15.5px;line-height:1.5;color:var(--grey);margin:0}
+.values.pairs .vp strong{color:var(--ink);font-weight:700}
+
+/* ---------- contact: desks, out-of-hours strip ---------- */
+.desks{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.desk .inner{padding:26px 26px 28px;display:flex;flex-direction:column;gap:12px}
+.desk .dk{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:23px;line-height:1.15}
+.desk p{font-size:16px;color:var(--grey)}
+.desk address{font-style:normal;font-size:17px;line-height:1.6;border-top:1px solid var(--rule);padding-top:12px;overflow-wrap:anywhere}
+.desk address a{text-decoration:none;font-weight:500}
+.ooh{
+  margin-top:34px;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 28px;
+  border-left:4px solid var(--green);background:var(--paper);padding:16px 20px;
+}
+.ooh-lab{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--grey)}
+.ooh-val{font-size:18px;font-weight:500}
+.f.consent{gap:10px}
+.f.consent .tick{font-size:15px;color:var(--grey);align-items:flex-start}
+.f.consent .tick input{margin-top:3px}
+@media (max-width:660px){.parents,.desks,.values.pairs{grid-template-columns:1fr}}
