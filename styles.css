@@ -663,3 +663,18 @@ section.band{background:var(--mist)}
 
 /* every page: title, then a paragraph or two, then the specifics */
 .prose.intro{margin-bottom:44px}
+
+/* ---------- cargo: parcel-size scale ---------- */
+.scale-vis{line-height:0;margin-top:-6px}
+.scale-vis svg{width:100%;height:auto;display:block;font-family:"Fira Sans Condensed","Fira Sans",Arial,sans-serif}
+.scale-vis .water{stroke:var(--rule);stroke-width:2}
+.scale-vis .hull{fill:var(--ink)}
+.scale-vis .house{fill:var(--ink)}
+.scale-vis .ship rect{fill:var(--green)}
+.scale-vis .ship.s4 .hull{fill:var(--green-deep)}
+.scale-vis .ship.s4 .house{fill:var(--green-deep)}
+.scale-vis .t{font-size:22px;font-weight:700;fill:var(--green);font-variant-numeric:tabular-nums}
+.scale-vis .n{font-size:13px;font-weight:700;fill:var(--grey);letter-spacing:.12em;text-transform:uppercase}
+.cg-body p{font-size:16px;line-height:1.6;max-width:60ch}
+.cg-body p a{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:13.5px;text-decoration:none;margin-left:4px}
+@media (max-width:660px){.scale-vis .t{font-size:30px}.scale-vis .n{font-size:18px}}
