@@ -589,16 +589,14 @@ section.band{background:var(--mist)}
 .figblock .dash{margin:0 .06em;color:var(--ink)}
 .figunit{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
 .figblock .figcap{font-size:15.5px;color:var(--grey);flex:none;margin-top:6px}
-.trademap{border:1px solid var(--rule);margin-bottom:28px;line-height:0;max-width:700px}
+.trademap{margin:0 0 10px;line-height:0}
 .trademap svg{width:100%;height:auto;display:block;font-family:"Fira Sans Condensed","Fira Sans",Arial,sans-serif}
-.trademap .sea{fill:var(--mist)}
-.trademap .land{fill:var(--paper);stroke:var(--rule);stroke-width:1.2;stroke-linejoin:round}
+.trademap .land{fill:var(--paper);stroke:var(--rule);stroke-width:1.5;stroke-linejoin:round}
 .trademap .sea2{fill:var(--mist);stroke:var(--rule);stroke-width:1.2;stroke-linejoin:round}
-.trademap .ta ellipse{fill:var(--green);opacity:.16;transition:opacity .15s}
+.trademap .ta ellipse{fill:var(--green);opacity:.18;transition:opacity .15s}
 .trademap .ta:hover ellipse{opacity:.32}
-.trademap .ta text{font-size:15px;font-weight:700;fill:var(--green-deep);letter-spacing:.04em}
+.trademap .ta text{font-size:19px;font-weight:700;fill:var(--green-deep);letter-spacing:.04em}
 .trademap .home circle{fill:var(--ink);stroke:var(--paper);stroke-width:2}
-.trademap .home text{font-size:13px;font-weight:700;fill:var(--ink)}
-.areas{margin-top:0}
+.trademap .home text{font-size:15px;font-weight:700;fill:var(--ink)}
 @media (max-width:880px){.means{grid-template-columns:1fr}.figblock{max-width:none}}
 @media (max-width:660px){.trademap .ta text{font-size:19px}.trademap .home text{font-size:16px}}
