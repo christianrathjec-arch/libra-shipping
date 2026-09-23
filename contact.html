@@ -36,29 +36,46 @@
       
     </div>
   </section>
-  <section class="strip">
+  <section class="band">
     <div class="wrap">
-      <div class="item"><span class="lab">General &middot; chartering</span><span class="val"><a href="mailto:chartering@librashipping.nl">chartering@librashipping.nl</a></span></div>
-      <div class="item"><span class="lab">General &middot; agency</span><span class="val"><a href="mailto:libra.agencies@librashipping.nl">libra.agencies@librashipping.nl</a></span></div>
-      <div class="item"><span class="lab">Office</span><span class="val num"><a href="tel:+31180441151">+31 180 441 151</a></span></div>
-      <div class="item"><span class="lab">Out of hours</span><span class="val num todo">[mobile 1] &middot; [mobile 2] &middot; [mobile 3]</span></div>
+      <div class="sechead"><h2>Choose your desk.</h2></div>
+      <div class="desks">
+        <article class="desk framed">
+          <div class="inner">
+            <span class="dk">Chartering</span>
+            <p>Cargo to move, a freight indication, or a vessel open for employment.</p>
+            <address><a href="mailto:chartering@librashipping.nl">chartering@librashipping.nl</a><br><a class="num" href="tel:+31180441151">+31 180 441 151</a></address>
+          </div>
+        </article>
+        <article class="desk framed">
+          <div class="inner">
+            <span class="dk">Agency</span>
+            <p>Port calls, proforma disbursement accounts, crew changes and husbandry.</p>
+            <address><a href="mailto:libra.agencies@librashipping.nl">libra.agencies@librashipping.nl</a><br><a class="num" href="tel:+31180441151">+31 180 441 151</a></address>
+          </div>
+        </article>
+      </div>
+      <div class="ooh">
+        <span class="ooh-lab">Out of hours &middot; vessel in port?</span>
+        <span class="ooh-val num todo">[24/7 number &mdash; Libra&rsquo;s own] &middot; [mobile 1] &middot; [mobile 2] &middot; [mobile 3]</span>
+      </div>
     </div>
   </section>
 
-  <section class="band">
+  <section>
     <div class="wrap">
       <div class="sechead"><h2>Rotterdam and Antwerp.</h2></div>
       <div class="offices">
         <article class="office framed">
           <div class="inner">
             <div><span class="on">Rotterdam</span><span class="oc">The Netherlands</span></div>
-            <address>Waalhaven Oostzijde 85<br><span class="num">3087 BM</span> Rotterdam<br><a class="num" href="tel:+31180441151">+31 180 441 151</a><br><a href="mailto:chartering@librashipping.nl">chartering@librashipping.nl</a><br><a href="mailto:libra.agencies@librashipping.nl">libra.agencies@librashipping.nl</a></address>
+            <ul class="ports"><li>Rotterdam</li><li>Amsterdam</li><li>Moerdijk</li><li>Terneuzen</li><li>Flushing</li></ul><address>Waalhaven Oostzijde 85<br><span class="num">3087 BM</span> Rotterdam<br><a class="num" href="tel:+31180441151">+31 180 441 151</a><br><a href="mailto:chartering@librashipping.nl">chartering@librashipping.nl</a><br><a href="mailto:libra.agencies@librashipping.nl">libra.agencies@librashipping.nl</a></address>
           </div>
         </article>
         <article class="office framed">
           <div class="inner">
             <div><span class="on">Antwerp</span><span class="oc">Belgium</span></div>
-            <address class="todo">[address]<br>[telephone]<br><a href="mailto:libra.agencies@librashipping.nl">libra.agencies@librashipping.nl</a></address>
+            <ul class="ports"><li>Antwerp</li><li>Ghent</li><li>Zeebrugge</li><li>Hemiksem and upper Scheldt</li></ul><address class="todo">[address]<br>[telephone]<br><a href="mailto:libra.agencies@librashipping.nl">libra.agencies@librashipping.nl</a></address>
           </div>
         </article>
       </div>
@@ -99,8 +116,13 @@
             <label class="tick full"><input type="checkbox" name="proforma" value="yes"> Please send a proforma disbursement account</label>
           </div>
         </details>
+        <div class="f full consent">
+          <label class="tick"><input type="checkbox" name="privacy" value="yes" required> I agree that Libra Shipping stores this enquiry and contacts me about it. <a href="#">Privacy statement</a></label>
+          <label class="tick"><input type="checkbox" name="terms" value="yes" required> I have read the <a href="#">General Terms &amp; Conditions</a>.</label>
+        </div>
         <div class="f full">
           <p><button class="btn" type="submit">Send enquiry</button></p>
+          <p class="formnote"><span class="todo">[Response time, if Libra will promise one: &ldquo;We answer within the working day.&rdquo;]</span></p>
           
         </div>
       </form>
