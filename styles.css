@@ -687,7 +687,7 @@ section.band{background:var(--mist)}
 .parent p{font-size:16px;color:var(--grey)}
 .values.pairs{grid-template-columns:repeat(3,1fr);gap:26px 36px}
 .values.pairs li{display:flex;flex-direction:column;gap:10px;font-size:16px;font-family:"Fira Sans",Arial,sans-serif;font-weight:400}
-.values.pairs .vh{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:22px;line-height:1.2;margin-bottom:4px}
+.values.pairs .vh{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:22px;line-height:1.2;margin-bottom:4px;color:var(--ink)}
 .values.pairs .vp{display:block;font-size:15.5px;line-height:1.5;color:var(--grey);margin:0}
 .values.pairs .vp strong{color:var(--ink);font-weight:700}
 
