@@ -535,3 +535,8 @@ section.band{background:var(--mist)}
   .timeline li::before{left:0}
   .values.six{grid-template-columns:1fr}
 }
+
+/* home: key-values band without a heading; What we do gets the deeper text */
+.kv .kvgrid{margin-top:0}
+.kv{padding-block:14px 76px}
+.prose.deeper{margin-bottom:44px}
