@@ -181,7 +181,8 @@ section.band{background:var(--mist)}
 }
 
 .people{display:grid;grid-template-columns:repeat(2,1fr);gap:34px}
-.person .inner{display:flex;align-items:stretch;gap:0}
+.person{display:flex;flex-direction:column}
+.person .inner{display:flex;align-items:stretch;gap:0;flex:1}
 .person .portrait{flex:none;width:152px}
 .person .portrait .ph{height:100%;min-height:200px;padding:14px 15px;gap:3px}
 .person .portrait .ph::before{inset:9px}
@@ -361,17 +362,25 @@ section.band{background:var(--mist)}
 
 /* homepage: key-values band (Libra's version of Euro Nordic's key figures) */
 .kv{background:var(--paper)}
-.kvgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.kvgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 44px}
 .kvt{
-  min-height:190px;padding:22px 24px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;
-  background:var(--mist);color:var(--ink);
+  position:relative;padding:22px 0 6px;display:flex;flex-direction:column;gap:6px;
+  border-top:1px solid var(--rule);color:var(--ink);
+  animation:kv-rise .7s cubic-bezier(.2,.7,.2,1) both;
 }
-.kvt.dark{background:var(--deep);color:var(--paper)}
-.kvt.green{background:var(--green);color:var(--paper)}
-.kvfig{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:40px;line-height:1;letter-spacing:-.005em}
-.kvfig small{font-size:.5em;letter-spacing:.1em;text-transform:uppercase}
-.kvhead{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:24px;line-height:1.1}
-.kvcap{font-size:14.5px;line-height:1.45;opacity:.85}
+.kvt::before{
+  content:"";position:absolute;left:0;top:-1px;height:3px;width:0;background:var(--green);
+  animation:kv-rule .6s cubic-bezier(.2,.7,.2,1) .35s both;transition:width .45s cubic-bezier(.2,.7,.2,1);
+}
+.kvt:nth-child(2){animation-delay:.12s}.kvt:nth-child(2)::before{animation-delay:.47s}
+.kvt:nth-child(3){animation-delay:.24s}.kvt:nth-child(3)::before{animation-delay:.59s}
+.kvt:hover::before{width:100%}
+.kvt:hover .kvhead{color:var(--green)}
+.kvhead{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:26px;line-height:1.1;transition:color .25s}
+.kvcap{font-size:15.5px;line-height:1.5;color:var(--grey)}
+@keyframes kv-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes kv-rule{from{width:0}to{width:48px}}
+@media (prefers-reduced-motion:reduce){.kvt,.kvt::before{animation:none}.kvt::before{width:48px}}
 .ph.tile{min-height:170px;aspect-ratio:auto}
 .kv .slot.inline{margin-top:18px}
 
@@ -540,7 +549,7 @@ section.band{background:var(--mist)}
 
 /* home: key-values band without a heading; What we do gets the deeper text */
 .kv .kvgrid{margin-top:0}
-.kv{padding-block:14px 76px}
+.kv{padding-block:40px 64px}
 .desk{display:grid;grid-template-columns:minmax(0,64ch) 300px;gap:24px 72px;align-items:start}
 .desk .prose.deeper{margin-bottom:0}
 .desk .services.link{grid-template-columns:1fr;gap:34px}
