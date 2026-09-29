@@ -540,6 +540,10 @@ section.band{background:var(--mist)}
 /* home: key-values band without a heading; What we do gets the deeper text */
 .kv .kvgrid{margin-top:0}
 .kv{padding-block:14px 76px}
+.desk{display:grid;grid-template-columns:minmax(0,64ch) 300px;gap:24px 72px;align-items:start}
+.desk .prose.deeper{margin-bottom:0}
+.desk .services.link{grid-template-columns:1fr;gap:34px}
+@media (max-width:860px){.desk{grid-template-columns:1fr}.desk .services.link{gap:28px}}
 .prose.deeper{margin-bottom:44px}
 
 /* ---------- chartering: two audiences, the process ---------- */
