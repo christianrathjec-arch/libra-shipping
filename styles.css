@@ -307,6 +307,7 @@ section.band{background:var(--mist)}
 .services.nine{grid-template-columns:repeat(3,1fr);gap:30px 26px}
 .services.nine h3{font-size:19px}
 .svc.card .ph{aspect-ratio:3 / 2;margin-bottom:6px}
+.svc.card .cardimg{width:100%;aspect-ratio:3 / 2;object-fit:cover;display:block;margin-bottom:6px}
 .prose{display:flex;flex-direction:column;gap:14px;max-width:64ch}
 .person .portrait .ph-init{position:absolute;left:15px;bottom:14px}
 .person .portrait{position:relative}
