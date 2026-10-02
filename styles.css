@@ -729,3 +729,4 @@ section.band{background:var(--mist)}
 .f.consent .tick{font-size:15px;color:var(--grey);align-items:flex-start}
 .f.consent .tick input{margin-top:3px}
 @media (max-width:660px){.parents,.desks,.values.pairs{grid-template-columns:1fr}}
+.ooh-val a{text-decoration:none}
