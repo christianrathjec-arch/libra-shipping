@@ -129,21 +129,6 @@ section.band{background:var(--mist)}
 .hero .lead{color:#E8F0EA;max-width:44ch}
 .hero .herolead{max-width:60ch;font-size:18px;line-height:1.5;display:flex;flex-direction:column;gap:10px}
 .hero .herolead p{margin:0}
-/* rotating hero line: four statements in one slot, 3 s each, soft cross-fade */
-.hero h1.rotate{display:grid;max-width:22ch}
-.hero h1.rotate .rot{
-  grid-area:1/1;opacity:0;
-  animation:rotline 12s linear infinite;animation-delay:calc(var(--i) * 3s);
-}
-@keyframes rotline{
-  0%{opacity:0;transform:translateY(6px)}
-  5%,22%{opacity:1;transform:none}
-  27%,100%{opacity:0;transform:none}
-}
-@media (prefers-reduced-motion:reduce){
-  .hero h1.rotate .rot{opacity:0}
-  .hero h1.rotate .rot:first-child{opacity:1}
-}
 
 /* slim white contact strip directly beneath the hero */
 .strip{border-bottom:1px solid var(--rule);padding-block:0}
@@ -286,8 +271,7 @@ section.band{background:var(--mist)}
 .sechead .slot{margin-top:4px}
 .todo{color:var(--grey);font-style:italic}
 .tag.todo{border-style:dashed;border-color:var(--grey)}
-.hero h1{max-width:18ch}
-.hero h1.rotate{max-width:22ch}
+.hero h1{max-width:22ch}
 .hero .lead.todo{color:#9BB0A4}
 
 /* three on the team */
