@@ -7,11 +7,9 @@ PAGES = [
     ("index",      "Home",       "Libra Shipping B.V. — Ship brokers and agents, Rotterdam"),
     ("chartering", "Chartering", "Chartering — Libra Shipping B.V."),
     ("agency",     "Agency",     "Agency — Libra Shipping B.V."),
-    ("cargo",      "Cargo",      "Cargo — Libra Shipping B.V."),
-    ("about",      "About",      "About — Libra Shipping B.V."),
     ("contact",    "Contact",    "Contact — Libra Shipping B.V."),
 ]
-NAV = [("chartering", "Chartering"), ("agency", "Agency"), ("cargo", "Cargo"), ("about", "About")]
+NAV = [("chartering", "Chartering"), ("agency", "Agency")]
 
 
 def slot(kind, text, cls=""):
@@ -79,7 +77,7 @@ FOOTER = '''
       </div>
       <div>
         <div class="ft">Pages</div>
-        <p><a href="chartering.html">Chartering</a><br><a href="agency.html">Agency</a><br><a href="cargo.html">Cargo</a><br><a href="about.html">About</a><br><a href="contact.html">Contact</a></p>
+        <p><a href="chartering.html">Chartering</a><br><a href="agency.html">Agency</a><br><a href="contact.html">Contact</a></p>
         <p class="footsocial"><a href="#" class="todo">LinkedIn &rarr; [page URL]</a></p>
       </div>
     </div>
@@ -89,7 +87,7 @@ FOOTER = '''
         <span class="certbox todo">[cert logo]</span>
         <span class="certbox todo">[cert logo]</span>
         <span class="certbox todo">[cert logo]</span>
-        <span class="certnote todo">Only the ones Libra holds, each with a number behind it. See <a href="about.html">About</a>.</span>
+        <span class="certnote todo">Only the ones Libra holds, each with a number behind it..</span>
       </div>
     </div>
     <div class="footrule">
@@ -239,7 +237,6 @@ def page_index():
         <span class="tag">Grain products</span><span class="tag">Minerals</span><span class="tag">Fertilisers</span>
         <span class="tag todo">[steel]</span><span class="tag todo">[&hellip;]</span>
       </div>
-      <p class="aftertags"><a href="cargo.html">All cargo &rarr;</a></p>
     </div>
   </section>
 

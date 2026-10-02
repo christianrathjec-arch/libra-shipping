@@ -447,7 +447,6 @@ section.band{background:var(--mist)}
   border:1px solid var(--green-lift);color:var(--paper);flex-direction:column;gap:1px;
   text-decoration:none;width:auto;min-width:110px;padding:0 14px;
 }
-.certbox.live:hover{background:rgba(52,199,123,.12);text-decoration:none}
 .certname{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:17px;letter-spacing:.06em;color:var(--green-lift);line-height:1}
 .certsub{font-size:11.5px;color:#9BB0A4;letter-spacing:.04em}
 
