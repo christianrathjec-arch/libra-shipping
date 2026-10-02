@@ -730,3 +730,12 @@ section.band{background:var(--mist)}
 .f.consent .tick input{margin-top:3px}
 @media (max-width:660px){.parents,.desks,.values.pairs{grid-template-columns:1fr}}
 .ooh-val a{text-decoration:none}
+
+/* single head-office card: centred, roomier */
+.sechead.centered{text-align:center;margin-inline:auto;align-items:center}
+.offices.one{grid-template-columns:minmax(0,680px);justify-content:center}
+.offices.one .office .inner{padding:40px 44px 44px;text-align:center;gap:20px}
+.offices.one .office .on{font-size:30px}
+.offices.one .office .oc{font-size:13px;margin-top:6px}
+.offices.one .office address{font-size:19px;line-height:1.65;padding-top:22px}
+@media (max-width:640px){.offices.one .office .inner{padding:28px 22px 30px}.offices.one .office .on{font-size:25px}.offices.one .office address{font-size:17px}}
