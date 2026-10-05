@@ -754,5 +754,32 @@ section.band{background:var(--mist)}
 @media (max-width:660px){.docs{grid-template-columns:1fr}}
 
 /* legal pages: short headed paragraphs */
-.prose.legal h3{font-size:19px;margin-top:26px;margin-bottom:6px}
-.prose.legal h3:first-child{margin-top:0}
+.prose.legal{counter-reset:legal}
+.prose.legal h3{
+  counter-increment:legal;font-size:20px;margin-top:34px;margin-bottom:8px;padding-top:18px;
+  border-top:1px solid var(--rule);display:flex;gap:14px;align-items:baseline;scroll-margin-top:24px;
+}
+.prose.legal h3::before{
+  content:counter(legal,decimal-leading-zero);font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;
+  font-size:13px;letter-spacing:.1em;color:var(--green);flex:none;
+}
+.prose.legal h3:first-child{margin-top:0;padding-top:0;border-top:0}
+
+/* legal pages: side index + body */
+.legalmeta{margin-top:14px;font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#9BB0A4}
+.legalgrid{display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px;align-items:start}
+.legalnav{position:sticky;top:24px}
+.legalnav .ft{display:block;font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--grey);margin-bottom:10px}
+.legalnav ol{list-style:none;margin:0;padding:0;counter-reset:idx;border-left:3px solid var(--green)}
+.legalnav li{counter-increment:idx}
+.legalnav a{display:flex;gap:10px;padding:6px 0 6px 14px;font-size:15px;line-height:1.3;text-decoration:none;color:var(--ink)}
+.legalnav a::before{content:counter(idx,decimal-leading-zero);font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.08em;color:var(--green);flex:none;padding-top:2px}
+.legalnav a:hover{color:var(--green)}
+.inshort{margin-bottom:34px}
+.inshort .inner{padding:22px 26px 20px}
+.inshort .ft{display:block;font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+.inshort .plain{margin:0}
+.inshort .plain li{font-size:16px}
+@media (max-width:880px){.legalgrid{grid-template-columns:1fr;gap:30px}.legalnav{position:static}}
+.legalbody{max-width:680px}
+.legalbody .prose,.legalbody .prose p{max-width:none}
