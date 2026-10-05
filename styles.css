@@ -743,3 +743,12 @@ section.band{background:var(--mist)}
 /* footer: one certification mark directly under the brand line */
 .footcert{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:18px}
 .footcert .certnote{flex:0 1 auto}
+
+/* terms page: the two sets of conditions */
+.docs{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:38px}
+.doc .inner{padding:26px 26px 24px;display:flex;flex-direction:column;gap:12px;height:100%}
+.doc h3{font-size:21px;line-height:1.2}
+.doc p{font-size:16px;color:var(--grey)}
+.doc .btn{margin-top:4px}
+.docsrc{font-size:14px;margin-top:auto}
+@media (max-width:660px){.docs{grid-template-columns:1fr}}
