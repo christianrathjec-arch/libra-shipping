@@ -720,11 +720,11 @@ section.band{background:var(--mist)}
 .desk address{font-style:normal;font-size:17px;line-height:1.6;border-top:1px solid var(--rule);padding-top:12px;overflow-wrap:anywhere}
 .desk address a{text-decoration:none;font-weight:500}
 .ooh{
-  margin-top:34px;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 28px;
-  border-left:4px solid var(--green);background:var(--paper);padding:16px 20px;
+  margin:34px auto 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;
+  max-width:420px;border-top:4px solid var(--green);background:var(--paper);padding:22px 28px 24px;
 }
 .ooh-lab{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--grey)}
-.ooh-val{font-size:18px;font-weight:500}
+.ooh-val{font-family:"Fira Sans Condensed",Arial,sans-serif;font-weight:700;font-size:28px;line-height:1.1;color:var(--ink)}
 .f.consent{gap:10px}
 .f.consent .tick{font-size:15px;color:var(--grey);align-items:flex-start}
 .f.consent .tick input{margin-top:3px}
