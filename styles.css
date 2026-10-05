@@ -752,3 +752,7 @@ section.band{background:var(--mist)}
 .doc .btn{margin-top:4px}
 .docsrc{font-size:14px;margin-top:auto}
 @media (max-width:660px){.docs{grid-template-columns:1fr}}
+
+/* legal pages: short headed paragraphs */
+.prose.legal h3{font-size:19px;margin-top:26px;margin-bottom:6px}
+.prose.legal h3:first-child{margin-top:0}
