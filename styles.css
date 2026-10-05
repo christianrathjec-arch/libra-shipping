@@ -783,3 +783,5 @@ section.band{background:var(--mist)}
 @media (max-width:880px){.legalgrid{grid-template-columns:1fr;gap:30px}.legalnav{position:static}}
 .legalbody{max-width:680px}
 .legalbody .prose,.legalbody .prose p{max-width:none}
+a.certbox.live:hover{border-color:var(--paper);text-decoration:none}
+a.certbox.live:hover .certname{color:var(--paper)}
