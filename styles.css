@@ -739,3 +739,7 @@ section.band{background:var(--mist)}
 .offices.one .office .oc{font-size:13px;margin-top:6px}
 .offices.one .office address{font-size:19px;line-height:1.65;padding-top:22px}
 @media (max-width:640px){.offices.one .office .inner{padding:28px 22px 30px}.offices.one .office .on{font-size:25px}.offices.one .office address{font-size:17px}}
+
+/* footer: one certification mark directly under the brand line */
+.footcert{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:18px}
+.footcert .certnote{flex:0 1 auto}
