@@ -53,8 +53,8 @@ T['index']=[
  ('<span class="tag">Agricultural products</span><span class="tag">Minerals</span><span class="tag">Fertilisers</span><span class="tag">Salt</span>','<span class="tag">Agrarische producten</span><span class="tag">Mineralen</span><span class="tag">Meststoffen</span><span class="tag">Zout</span>'),
  ('<span class="tag">Steel products</span><span class="tag">Project cargoes</span><span class="tag">Ferro alloys</span>','<span class="tag">Staalproducten</span><span class="tag">Projectlading</span><span class="tag">Ferrolegeringen</span>'),
  ('<h2>Tell us the cargo and route. We tell you the logistics cost.</h2>','<h2>Geef ons de lading en de route. Wij geven u de logistieke kosten.</h2>'),
- ('alt="Loaded bulk carrier under way on a grey sea"','alt="Beladen bulkcarrier varend op een grijze zee"'),
- ('alt="Bulk terminal with a vessel loading"','alt="Bulkterminal met een schip onder belading"'),
+ ('alt="Bulk carrier leaving the Maasmond at sunset"','alt="Bulkcarrier vaart de Maasmond uit bij zonsondergang"'),
+ ('alt="Ships in line at the Maasmond entrance at sunset"','alt="Schepen in de rij bij de Maasmond bij zonsondergang"'),
 ]+PANEL
 T['chartering']=[
  ('<title>Chartering — Libra Shipping B.V.</title>','<title>Bevrachting — Libra Shipping B.V.</title>'),
@@ -102,7 +102,10 @@ T['chartering']=[
  ('>Rotterdam &middot; Antwerp</text>','>Rotterdam &middot; Antwerpen</text>'),
  ('Every trade is different. <a href="contact.html">Tell us what you need to move &rarr;</a>','Elk vaargebied is anders. <a href="contact.html">Vertel ons wat u wilt vervoeren &rarr;</a>'),
  ('<h2>Interested in our services?</h2>','<h2>Interesse in onze diensten?</h2>'),
- ('alt="Bulk carrier seen from above"','alt="Bulkcarrier van bovenaf gezien"'),
+ ('alt="Beacon at the Maasvlakte with a bulk carrier on the horizon"','alt="Baken op de Maasvlakte met een bulkcarrier aan de horizon"'),
+ ('alt="Container feeder vessel under way at sea"','alt="Containerfeeder onderweg op zee"'),
+ ('alt="Bulk carrier seen straight from above on green water"','alt="Bulkcarrier recht van boven op groen water"'),
+ ('alt="Laptop with a route map and a freight calculation on the desk"','alt="Laptop met routekaart en een vrachtcalculatie op het bureau"'),
 ]+PANEL+GMP
 T['agency']=[
  ('<title>Agency — Libra Shipping B.V.</title>','<title>Agentuur — Libra Shipping B.V.</title>'),
@@ -142,7 +145,13 @@ T['agency']=[
  ('When Libra fixes the vessel, the same desk handles the port call. No handover, nothing lost between broker and agent, one contact for both.','Wanneer Libra het schip bevracht, verzorgt hetzelfde team de havenaanloop. Geen overdracht, niets gaat verloren tussen makelaar en agent, één contactpersoon voor beide.'),
  ('See what we fix &rarr;','Bekijk wat wij afsluiten &rarr;'),
  ('<h2>Nominate a vessel, or if interested, ask what a port call will cost.</h2>','<h2>Nomineer een schip, of vraag vrijblijvend wat een havenaanloop kost.</h2>'),
- ('alt="Bulk carrier alongside the quay with grab cranes working"','alt="Bulkcarrier aan de kade met werkende grijperkranen"'),
+ ('alt="Grab crane discharging coal into an inland barge, sea-going vessel behind"','alt="Grijperkraan lost kolen in een binnenvaartschip, zeeschip erachter"'),
+ ('alt="Agent in a high-visibility vest climbing the gangway of a vessel"','alt="Agent in veiligheidsvest op de gangway van een schip"'),
+ ('alt="Bunker barge alongside a bulk carrier with the hose connected"','alt="Bunkerschip langszij een bulkcarrier met aangesloten slang"'),
+ ('alt="Three crew members walking along the quay with their bags"','alt="Drie bemanningsleden lopen met hun tassen over de kade"'),
+ ('alt="Vessels alongside in the Botlek at dusk"','alt="Schepen aan de kade in de Botlek bij avond"'),
+ ('alt="Welder working on the hull of a vessel in dry dock"','alt="Lasser aan het werk aan de romp van een schip in het droogdok"'),
+ ('alt="Bulk terminal with cranes and cargo stacks seen from the air"','alt="Bulkterminal met kranen en ladingbergen vanuit de lucht"'),
 ]+PANEL+GMP
 T['contact']=[
  ('<h1>Let&rsquo;s talk shipping.</h1>','<h1>Laten we het over scheepvaart hebben.</h1>'),
@@ -174,7 +183,7 @@ T['contact']=[
  ('> I have read the <a href="conditions.html">General Terms &amp; Conditions</a>.</label>','> Ik heb de <a href="conditions.html">Algemene voorwaarden</a> gelezen.</label>'),
  ('<button class="btn" type="submit">Send enquiry</button>','<button class="btn" type="submit">Aanvraag versturen</button>'),
  ('[Response time, if Libra will promise one: &ldquo;We answer within the working day.&rdquo;]','[Reactietijd, als Libra die wil toezeggen: &ldquo;Wij antwoorden binnen één werkdag.&rdquo;]'),
- ('alt="Harbour under an overcast sky"','alt="Haven onder een bewolkte lucht"'),
+ ('alt="Tug under way off the Maasvlakte at sunset"','alt="Sleepboot op het water bij de Maasvlakte bij zonsondergang"'),
  ('<h2>Our team.</h2>','<h2>Ons team.</h2>'),
 ]
 T['conditions']=[
