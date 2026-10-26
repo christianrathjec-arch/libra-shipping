@@ -122,9 +122,10 @@ section.band{background:var(--mist)}
 }
 .hero .wrap{
   position:relative;z-index:1;width:100%;
-  padding-block:56px 48px;padding-left:calc(var(--gut) + 26px);display:flex;flex-direction:column;gap:15px;
+  padding-block:56px 48px;display:flex;flex-direction:column;gap:15px;
 }
-.hero .wrap::before{content:"";position:absolute;left:var(--gut);top:60px;bottom:52px;width:5px;background:var(--green-lift)}
+.hero.rule .wrap{padding-left:calc(var(--gut) + 26px)}
+.hero.rule .wrap::before{content:"";position:absolute;left:var(--gut);top:60px;bottom:52px;width:5px;background:var(--green-lift)}
 .hero h1{color:var(--paper);max-width:15ch}
 .hero .eyebrow{color:var(--paper);text-shadow:0 1px 2px rgba(0,0,0,.55),0 0 12px rgba(0,0,0,.35)}
 .hero h1,.hero .lead,.hero .herolead{text-shadow:0 1px 2px rgba(0,0,0,.45),0 0 14px rgba(0,0,0,.3)}
@@ -434,8 +435,9 @@ section.band{background:var(--mist)}
   .hero{min-height:0}
   .hero .media{position:relative;height:230px}
   .hero .media > .ph{position:absolute}
-  .hero .wrap{padding-block:34px 38px;padding-left:calc(var(--gut) + 20px)}
-  .hero .wrap::before{top:38px;bottom:42px;width:4px}
+  .hero .wrap{padding-block:34px 38px}
+  .hero.rule .wrap{padding-left:calc(var(--gut) + 20px)}
+  .hero.rule .wrap::before{top:38px;bottom:42px;width:4px}
   .hero{display:block;background:var(--deep)}
   .hero .media::after{background:linear-gradient(to top,rgba(11,32,24,.55) 0%,rgba(11,32,24,.15) 100%)}
   .band-photo .ph,.band-photo img{aspect-ratio:3 / 2;min-height:0}
