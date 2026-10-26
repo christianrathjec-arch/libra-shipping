@@ -13,6 +13,7 @@ import numpy as np
 from PIL import Image, ImageFilter
 SRC = pathlib.Path(sys.argv[1]); OUT = pathlib.Path(__file__).parent / "assets"
 HERO_W = (1600, 2400, 3200)
+TINT = 0.5   # band: half the original green tint (Christian, 26 Oct: lighter, like the hero wash)
 # name: (original, crop box as fractions l,t,r,b, fallback width, extra widths, tinted?)
 SHOTS = {
  "hero-home-3":        ("Portstock-21.jpg", (0,0,.72,1),   1920, HERO_W, False),
@@ -35,7 +36,8 @@ def fit_tint():
     M, *_ = np.linalg.lstsq(A, b, rcond=None)
     err = np.abs(A@M - b).mean()*255
     print(f"tint matrix fitted, mean error {err:.1f}/255")
-    return M
+    I = np.vstack([np.eye(3), np.zeros((1,3))])
+    return I*(1-TINT) + M*TINT   # TINT=1 reproduces the old look, 0 = untouched photo
 def apply_tint(im, M):
     a = np.asarray(im.convert("RGB")).astype(float)/255
     A = np.concatenate([a, np.ones(a.shape[:2]+(1,))], -1)
