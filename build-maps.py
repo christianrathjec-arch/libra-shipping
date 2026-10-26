@@ -3,7 +3,7 @@
 
   python3 build-maps.py /path/to/geodata
 
-geodata needs ne_50m_land.geojson (trade map), ne_10m_land.geojson and
+geodata needs ne_50m_land.geojson (trade map), ne_10m_land.geojson, ne_10m_lakes.geojson and
 ne_10m_rivers_lake_centerlines.geojson (ARA port map), from
 https://github.com/nvkelso/natural-earth-vector/tree/master/geojson (not kept in the repo).
 Replaces the <div class="trademap"> block in chartering(.-nl).html and the
@@ -139,12 +139,24 @@ def rivers():
             s=P.d(seg,closed=False,tol=0.5); d.append(s) if s else None
     return '<path class="river" d="'+" ".join(x for x in d if x)+'"/>'
 
+def lakes():
+    # inland water drawn as plain mist on top of the land (IJsselmeer/Markermeer): shape only, not a working area
+    paths=[]
+    for f in json.load(open(GEO/"ne_10m_lakes.geojson"))["features"]:
+        g=f["geometry"]; polys=[g["coordinates"]] if g["type"]=="Polygon" else g["coordinates"]
+        for poly in polys:
+            pts=[P.px(lo,la) for lo,la in poly[0]]
+            if not any(0<=x<=P.W and 0<=y<=P.H for x,y in pts): continue
+            d=P.d(P.clip(pts), tol=0.6)
+            if d: paths.append(d)
+    return '<path class="lake" d="'+" ".join(paths)+'"/>' if paths else ""
+
 def port_svg(lang):
     head,l1,l2,sea=LEG[lang]; defs,rects=fades(P,"pf",r=200,l=110,t=50,b=60)
     out=[f'<svg viewBox="0 0 {P.W} {P.H}" xmlns="http://www.w3.org/2000/svg">',
          '<defs>'+defs+HATCH.format(id="phatch")+'</defs>',
          f'<rect width="{P.W}" height="{P.H}" fill="#EDF2EF"/>', P.grid(1,"pg"),
-         f'<path class="ta" d="{P.poly(ARA)}"/>', P.land("ne_10m_land.geojson", tol=0.6), rivers(), rects]
+         f'<path class="ta" d="{P.poly(ARA)}"/>', P.land("ne_10m_land.geojson", tol=0.6), lakes(), rivers(), rects]
     x,y=P.px(2.4,52.05); out.append(f'<text class="sealab" x="{x:.0f}" y="{y:.0f}">{sea}</text>')
     for off,name,lo,la,anc,dx,dy in PORTS:
         x,y=P.px(lo,la); lab=PORT_NL.get(name,name) if lang=="nl" else name
