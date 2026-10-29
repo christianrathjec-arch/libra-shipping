@@ -68,20 +68,21 @@ class Frame:
         return f'<path class="grat" d="{" ".join(d)}"/>'
 
 HATCH='<pattern id="{id}" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line class="hl" x1="0" y1="0" x2="0" y2="7"/></pattern>'
+HATCH_HI='<pattern id="{id}-hi" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line class="hl hi" x1="0" y1="0" x2="0" y2="7"/></pattern>'  # hover: heavier lines (29 Oct)
 def fades(F, prefix, r=140, l=120, t=70, b=90):
     g=lambda id,x1,y1,x2,y2: f'<linearGradient id="{prefix}{id}" x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}"><stop offset="0" stop-color="#EDF2EF" stop-opacity="0"/><stop offset="1" stop-color="#EDF2EF"/></linearGradient>'
     defs=g("R",0,0,1,0)+g("L",1,0,0,0)+g("T",0,1,0,0)+g("B",0,0,0,1)
-    rects=(f'<rect x="{F.W-r}" y="0" width="{r}" height="{F.H}" fill="url(#{prefix}R)"/><rect x="0" y="0" width="{l}" height="{F.H}" fill="url(#{prefix}L)"/>'
-           f'<rect x="0" y="0" width="{F.W}" height="{t}" fill="url(#{prefix}T)"/><rect x="0" y="{F.H-b}" width="{F.W}" height="{b}" fill="url(#{prefix}B)"/>')
+    rects=(f'<rect class="fade" x="{F.W-r}" y="0" width="{r}" height="{F.H}" fill="url(#{prefix}R)"/><rect class="fade" x="0" y="0" width="{l}" height="{F.H}" fill="url(#{prefix}L)"/>'
+           f'<rect class="fade" x="0" y="0" width="{F.W}" height="{t}" fill="url(#{prefix}T)"/><rect class="fade" x="0" y="{F.H-b}" width="{F.W}" height="{b}" fill="url(#{prefix}B)"/>')
     return defs, rects
 
 # ---------------- trade map (chartering) ----------------
-T = Frame(1080, 680, -38.0, 44.0, 29.0, 63.0)
+T = Frame(1080, 780, -38.0, 44.0, 22.0, 63.0)  # 29 Oct: 100px taller, south to 22N so West Africa is a real area, not a strip
 AREAS = {  # lon/lat polygons that abut; land drawn on top clips them to water
  "north": ([(1.4,50.9),(-2.2,56),(-2.5,59),(-1.8,61.6),(5.6,62.6),(7.6,58.2),(8.5,59.3),(10.8,59.9),(11.8,58.8),(11.8,57.6),(10.6,57.7),(9.4,55.2),(8.6,53.6),(5.2,53.1),(4.2,51.9),(1.9,50.9)], (3.3,56.6)),
  "baltic": ([(10.6,57.7),(11.8,57.6),(12.5,58.4),(13.5,60.4),(17,63.5),(24,66.5),(31.5,62),(30.5,59.2),(25,57.2),(21.5,54.3),(14,53.6),(10.4,54.1),(9.8,55.5)], (19.5,58.4)),
  "atlantic": ([(-45,66),(-1.8,66),(-1.8,61.6),(-2.5,59),(-2.2,56),(1.4,50.9),(1.9,50.9),(0,49.3),(-2,49),(-4.8,48.3),(-1.2,46.5),(-1.5,43.4),(-8.2,43.6),(-8.2,37.0),(-6.3,36.0),(-5.6,35.95),(-5.4,35.2),(-6.3,34.0),(-7.4,33.2),(-10.0,32.2),(-45,32.2)], (-21,48.5)),
- "westafrica": ([(-45,32.2),(-10.0,32.2),(-9.6,30.2),(-13.2,27.2),(-17.2,21),(-45,21)], (-23,30.6)),
+ "westafrica": ([(-45,32.2),(-10.0,32.2),(-9.6,30.2),(-13.2,27.2),(-17.2,21),(-45,21)], (-23,27.0)),
  "med": ([(-5.6,35.95),(-6.3,36.0),(-5.8,36.6),(-1.5,38.2),(0.6,41.2),(2.6,43.6),(9,44.8),(13,46.2),(19.5,41.5),(23.5,40.2),(26.6,41.2),(26.2,40.1),(29.0,41.0),(29.4,40.6),(36.5,37.2),(36.5,31),(30,30.4),(10,33.2),(-2,34.8),(-5.2,35.3)], (17.5,35.6)),
  "black": ([(29.0,41.0),(26.2,40.1),(27.5,41.6),(28.2,42.6),(27.6,43.6),(30.2,47.2),(35.5,46.4),(39.5,47.8),(42.5,43.5),(42.5,40.9),(36,41),(29.4,40.6)], (34.5,43.6)),
 }
@@ -90,9 +91,9 @@ NAMES = {"en": {"north":"North Sea","baltic":"Baltic","atlantic":"Atlantic","wes
 RTM=(4.48,51.92); ANT=(4.40,51.22)
 
 def trade_svg(lang):
-    n=NAMES[lang]; defs,rects=fades(T,"tf")
+    n=NAMES[lang]; defs,rects=fades(T,"tf",b=60)
     out=[f'<svg viewBox="0 0 {T.W} {T.H}" xmlns="http://www.w3.org/2000/svg">',
-         '<defs>'+defs+HATCH.format(id="thatch")+'</defs>',
+         '<defs>'+defs+HATCH.format(id="thatch")+HATCH_HI.format(id="thatch")+'</defs>',
          f'<rect width="{T.W}" height="{T.H}" fill="#EDF2EF"/>', T.grid(10,"tg"),
          '<g class="seas">'+"".join(f'<path class="ta" d="{T.poly(ll)}"/>' for k,(ll,lp) in AREAS.items())+'</g>',
          T.land("ne_50m_land.geojson"), rects]

@@ -623,7 +623,9 @@ section.band{background:var(--mist)}
 .trademap .grat{fill:none;stroke:var(--rule);stroke-width:1;stroke-dasharray:3 5}
 .trademap .hl{stroke:var(--green);stroke-width:1.6}
 .trademap .ta{fill:url(#thatch);opacity:.55;stroke:var(--mist);stroke-width:3;stroke-linejoin:round;transition:opacity .15s}
-.trademap .ta:hover{opacity:.95}
+.trademap .ta:hover{opacity:1;fill:url(#thatch-hi)}
+.trademap .hi{stroke:var(--green-deep);stroke-width:2.4}
+.trademap .fade,.portmap .fade{pointer-events:none}
 .trademap .lab{font-size:19px;font-weight:700;fill:var(--green-deep);letter-spacing:.04em;paint-order:stroke;stroke:var(--paper);stroke-width:5px;stroke-linejoin:round;pointer-events:none}
 .trademap .home circle{fill:var(--ink);stroke:var(--paper);stroke-width:2}
 .trademap .home text{font-size:15px;font-weight:700;fill:var(--ink);paint-order:stroke;stroke:var(--mist);stroke-width:5px;stroke-linejoin:round}
